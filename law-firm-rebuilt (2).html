@@ -1,0 +1,3351 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الجرادات وأبو سويلم - محامون ومستشارون قانونيون | Al-Jaradat &amp; Abu Sweilem</title>
+<meta name="description" content="الجرادات وأبو سويلم – محامون ومستشارون قانونيون متميزون في الأردن. خبرة تتجاوز عشرين عاماً في التقاضي والاستشارات القانونية.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Readex+Pro:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* =============================================
+   DESIGN TOKENS
+   ============================================= */
+:root {
+  --black:       #080808;
+  --black-soft:  #0f0f0f;
+  --black-card:  #141414;
+  --black-glass: rgba(14,14,14,0.7);
+  --gold:        #c9a84c;
+  --gold-light:  #e2c46e;
+  --gold-pale:   #f0dfa0;
+  --gold-dim:    rgba(201,168,76,0.15);
+  --gold-glow:   rgba(201,168,76,0.08);
+  --white:       #f5f0e8;
+  --white-dim:   rgba(245,240,232,0.7);
+  --white-muted: rgba(245,240,232,0.4);
+  --white-faint: rgba(245,240,232,0.12);
+  --border:      rgba(201,168,76,0.18);
+  --border-hover:rgba(201,168,76,0.45);
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-xl:   32px;
+  --shadow-gold: 0 0 40px rgba(201,168,76,0.12);
+  --shadow-deep: 0 32px 80px rgba(0,0,0,0.6);
+  --transition:  0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --font-en:     'Outfit', sans-serif;
+  --font-display:'Cormorant Garamond', serif;
+  --font-ar:     'IBM Plex Sans Arabic', sans-serif;
+  --font-ar-display: 'Readex Pro', sans-serif;
+}
+
+/* =============================================
+   RESET
+   ============================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-en);
+  font-weight: 400;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  cursor: none;
+}
+html[lang="ar"] body { font-family: var(--font-ar); direction: rtl; }
+h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); color: var(--gold); line-height: 1.15; font-weight: 600; letter-spacing: -0.01em; }
+html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3,
+html[lang="ar"] h4, html[lang="ar"] h5, html[lang="ar"] h6 { font-family: var(--font-ar-display); letter-spacing: 0; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+button { cursor: pointer; border: none; background: none; }
+
+/* Lang switch */
+.en-content { display: block; }
+.ar-content { display: none; }
+html[lang="ar"] .en-content { display: none; }
+html[lang="ar"] .ar-content { display: block; }
+.en-inline { display: inline; }
+.ar-inline { display: none; }
+html[lang="ar"] .en-inline { display: none; }
+html[lang="ar"] .ar-inline { display: inline; }
+
+/* =============================================
+   CUSTOM CURSOR
+   ============================================= */
+.cursor {
+  width: 10px; height: 10px;
+  background: var(--gold);
+  border-radius: 50%;
+  position: fixed; top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%,-50%);
+  transition: width 0.3s, height 0.3s, background 0.3s;
+  mix-blend-mode: difference;
+}
+.cursor-ring {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(201,168,76,0.5);
+  border-radius: 50%;
+  position: fixed; top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%,-50%);
+  transition: width 0.5s var(--transition), height 0.5s var(--transition), transform 0.12s linear, border-color 0.3s;
+}
+body:has(a:hover) .cursor, body:has(button:hover) .cursor { width: 20px; height: 20px; }
+body:has(a:hover) .cursor-ring, body:has(button:hover) .cursor-ring { width: 60px; height: 60px; border-color: var(--gold); }
+
+/* =============================================
+   UTILITY
+   ============================================= */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px,5vw,60px); }
+.section-label {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-family: var(--font-en); font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+html[lang="ar"] .section-label { font-family: var(--font-ar); letter-spacing: 0; font-size: 0.78rem; }
+.section-label::before { content:''; width:28px; height:1px; background: var(--gold); display:block; }
+html[lang="ar"] .section-label::after { content:''; width:28px; height:1px; background: var(--gold); display:block; }
+
+.gold-line { width:60px; height:1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 1.5rem 0; }
+
+/* Reveal animations */
+.js-ready .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.js-ready .reveal.up { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }
+.js-ready .reveal-from-left { opacity:0; transform: translateX(-40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.js-ready .reveal-from-left.up { opacity:1; transform: translateX(0); }
+.js-ready .reveal-from-right { opacity:0; transform: translateX(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.js-ready .reveal-from-right.up { opacity:1; transform: translateX(0); }
+
+/* =============================================
+   BUTTONS
+   ============================================= */
+.btn-gold {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 0.9rem 2.2rem;
+  background: var(--gold);
+  color: var(--black);
+  font-family: var(--font-en); font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  position: relative; overflow: hidden;
+}
+html[lang="ar"] .btn-gold { font-family: var(--font-ar); letter-spacing: 0; }
+.btn-gold::after { content:''; position:absolute; inset:0; background:rgba(255,255,255,0.15); opacity:0; transition:opacity 0.3s; }
+.btn-gold:hover::after { opacity: 1; }
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,168,76,0.35); }
+
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 0.9rem 2.2rem;
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--border-hover);
+  font-family: var(--font-en); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+html[lang="ar"] .btn-outline { font-family: var(--font-ar); letter-spacing: 0; }
+.btn-outline:hover { background: var(--gold-dim); transform: translateY(-2px); }
+
+/* =============================================
+   NAV
+   ============================================= */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 0;
+  transition: all 0.5s ease;
+  border-bottom: 1px solid transparent;
+}
+.navbar.scrolled {
+  background: rgba(8,8,8,0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom-color: var(--border);
+}
+.navbar-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 76px; gap: 2rem;
+}
+.navbar-logo {
+  display: flex; flex-direction: column; gap: 2px;
+  text-decoration: none; flex-shrink: 0;
+}
+.logo-name {
+  font-family: var(--font-display); font-size: 1.15rem; font-weight: 600;
+  color: var(--gold); letter-spacing: 0.02em; line-height: 1.1;
+}
+html[lang="ar"] .logo-name { font-family: var(--font-ar-display); font-size: 1.1rem; }
+.logo-sub {
+  font-size: 0.58rem; font-weight: 500; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--white-muted); line-height: 1;
+}
+html[lang="ar"] .logo-sub { font-family: var(--font-ar); letter-spacing: 0; font-size: 0.65rem; }
+
+.nav-links {
+  display: flex; align-items: center; gap: 0;
+  flex: 1; justify-content: center;
+}
+.nav-links a {
+  padding: 0.5rem 1rem;
+  font-size: 0.72rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--white-dim); transition: color 0.3s;
+  position: relative;
+}
+html[lang="ar"] .nav-links a { letter-spacing: 0; font-family: var(--font-ar); }
+.nav-links a::after {
+  content:''; position:absolute; bottom:-2px; left:50%; right:50%;
+  height:1px; background: var(--gold);
+  transition: left 0.3s var(--transition), right 0.3s var(--transition);
+}
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+.nav-links a:hover::after, .nav-links a.active::after { left: 1rem; right: 1rem; }
+
+.nav-actions { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
+.lang-toggle {
+  display: flex; border: 1px solid var(--border);
+  border-radius: var(--radius-sm); overflow: hidden;
+}
+.lang-toggle button {
+  padding: 0.38rem 0.75rem; font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.05em; color: var(--white-muted); transition: var(--transition);
+}
+.lang-toggle button.active { background: var(--gold); color: var(--black); }
+.lang-toggle button:not(.active):hover { background: var(--white-faint); color: var(--gold); }
+
+.nav-cta {
+  padding: 0.5rem 1.4rem;
+  background: var(--gold); color: var(--black);
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  border-radius: var(--radius-sm); transition: var(--transition);
+  white-space: nowrap;
+}
+html[lang="ar"] .nav-cta { font-family: var(--font-ar); letter-spacing: 0; }
+.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.3); }
+
+.hamburger { display:none; flex-direction:column; gap:5px; width:30px; }
+.hamburger span { display:block; height:1.5px; background: var(--gold); border-radius:2px; transition: var(--transition); }
+
+.mobile-menu {
+  display: flex; position:fixed; inset:0; background:var(--black);
+  z-index: 999; flex-direction:column; align-items:center; justify-content:center;
+  gap:2rem; transform: translateX(100%); transition: transform 0.5s cubic-bezier(0.76,0,0.24,1);
+  pointer-events:none; visibility:hidden;
+}
+html[lang="ar"] .mobile-menu { transform: translateX(-100%); }
+.mobile-menu.open { transform:translateX(0); pointer-events:all; visibility:visible; }
+.mobile-close {
+  position:absolute; top:24px; right:28px;
+  font-size:1.8rem; color:var(--gold); line-height:1;
+}
+html[lang="ar"] .mobile-close { right:auto; left:28px; }
+.mobile-menu a {
+  font-family: var(--font-display); font-size: 2.5rem; font-weight: 600;
+  color: var(--white-dim); transition: color 0.3s;
+}
+html[lang="ar"] .mobile-menu a { font-family: var(--font-ar-display); }
+.mobile-menu a:hover { color: var(--gold); }
+
+/* =============================================
+   HERO
+   ============================================= */
+#hero {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; background: var(--black);
+}
+.hero-canvas {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 10% 80%, rgba(201,168,76,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 90% 20%, rgba(201,168,76,0.03) 0%, transparent 60%);
+}
+.hero-grid-overlay {
+  position: absolute; inset: 0; opacity: 0.03;
+  background-image:
+    linear-gradient(var(--gold) 1px, transparent 1px),
+    linear-gradient(90deg, var(--gold) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+#particles-canvas {
+  position: absolute; inset: 0;
+  pointer-events: none;
+}
+.hero-content {
+  position: relative; z-index: 2;
+  text-align: center; padding: 140px 20px 100px;
+  max-width: 1000px; margin: 0 auto;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 14px;
+  margin-bottom: 2.5rem;
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--gold);
+  animation: fadeInDown 1s ease forwards;
+  opacity: 0;
+}
+html[lang="ar"] .hero-eyebrow { letter-spacing: 0; font-family: var(--font-ar); font-size: 0.8rem; }
+.hero-eyebrow::before, .hero-eyebrow::after { content:''; width:40px; height:1px; background: linear-gradient(90deg, transparent, var(--gold)); display:block; }
+html[lang="ar"] .hero-eyebrow::before { background: linear-gradient(90deg, var(--gold), transparent); }
+@keyframes fadeInDown { from { opacity:0; transform: translateY(-20px); } to { opacity:1; transform: translateY(0); } }
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 9vw, 8rem);
+  font-weight: 300; line-height: 1;
+  color: var(--white); letter-spacing: -0.02em;
+  animation: fadeInUp 1.1s 0.2s ease forwards; opacity: 0;
+}
+html[lang="ar"] .hero-title { font-family: var(--font-ar-display); letter-spacing: 0; font-size: clamp(3rem, 8vw, 7rem); }
+.hero-title span { color: var(--gold); font-style: italic; }
+@keyframes fadeInUp { from { opacity:0; transform: translateY(30px); } to { opacity:1; transform: translateY(0); } }
+
+.hero-title-arabic {
+  font-family: var(--font-ar-display);
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  font-weight: 400; color: var(--gold);
+  margin-top: 0.4rem; letter-spacing: 0;
+  animation: fadeInUp 1.1s 0.35s ease forwards; opacity: 0;
+}
+.hero-separator {
+  display: flex; align-items: center; gap: 20px;
+  justify-content: center; margin: 2rem 0;
+  animation: fadeIn 1s 0.5s ease forwards; opacity: 0;
+}
+@keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+.hero-sep-line { flex: 1; max-width: 80px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+.hero-sep-icon { color: var(--gold); font-size: 1.1rem; }
+
+.hero-subtitle {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--white-dim); margin-bottom: 3rem;
+  animation: fadeInUp 1s 0.55s ease forwards; opacity: 0;
+}
+html[lang="ar"] .hero-subtitle { font-family: var(--font-ar); letter-spacing: 0; }
+
+.hero-ctas {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+  margin-bottom: 4.5rem;
+  animation: fadeInUp 1s 0.7s ease forwards; opacity: 0;
+}
+.hero-stats {
+  display: flex; gap: 3rem; justify-content: center; flex-wrap: wrap;
+  animation: fadeInUp 1s 0.85s ease forwards; opacity: 0;
+}
+.hero-stat { text-align: center; }
+.hero-stat-num {
+  font-family: var(--font-display); font-size: 2rem; font-weight: 600;
+  color: var(--gold); line-height: 1;
+}
+html[lang="ar"] .hero-stat-num { font-family: var(--font-ar-display); }
+.hero-stat-label {
+  font-size: 0.65rem; font-weight: 500; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--white-muted); margin-top: 0.3rem;
+}
+html[lang="ar"] .hero-stat-label { font-family: var(--font-ar); letter-spacing: 0; }
+.hero-stat-divider { width: 1px; background: var(--border); }
+
+.hero-scroll-indicator {
+  position: absolute; bottom: 2.5rem; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  color: var(--gold); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+  animation: pulse 2.5s infinite;
+}
+html[lang="ar"] .hero-scroll-indicator { font-family: var(--font-ar); letter-spacing: 0; }
+.scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--gold), transparent); }
+@keyframes pulse { 0%,100%{opacity:0.5; transform: translateX(-50%) translateY(0);} 50%{opacity:1; transform: translateX(-50%) translateY(8px);} }
+
+/* =============================================
+   SECTION COMMON
+   ============================================= */
+section { padding: clamp(5rem, 10vw, 9rem) 0; }
+.section-header { text-align: center; margin-bottom: clamp(3rem, 6vw, 5rem); }
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400; color: var(--gold); margin-bottom: 1rem;
+}
+.section-body {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  color: var(--white-dim); max-width: 620px;
+  margin: 0 auto; line-height: 1.8;
+}
+
+/* =============================================
+   ABOUT
+   ============================================= */
+#about { background: var(--black-soft); position: relative; overflow: hidden; }
+#about::before {
+  content:''; position:absolute; right:-200px; top:50%;
+  transform: translateY(-50%);
+  width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+html[lang="ar"] #about::before { right:auto; left:-200px; }
+
+.about-layout {
+  display: grid; grid-template-columns: 1fr 1.2fr;
+  gap: clamp(3rem, 6vw, 7rem); align-items: center;
+}
+html[lang="ar"] .about-layout { direction: rtl; }
+
+.about-visual-wrap { position: relative; }
+.about-frame {
+  position: relative; padding-bottom: 125%; overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+}
+.about-frame-inner {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.about-frame-inner svg { width: 55%; height: 55%; opacity: 0.55; }
+.about-badge {
+  position: absolute; bottom: -20px; right: -20px;
+  width: 120px; height: 120px;
+  background: var(--gold); border-radius: 50%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  box-shadow: 0 0 0 8px var(--black-soft), 0 0 0 9px var(--border);
+}
+html[lang="ar"] .about-badge { right: auto; left: -20px; }
+.about-badge-num {
+  font-family: var(--font-display); font-size: 2rem; font-weight: 700;
+  color: var(--black); line-height: 1;
+}
+.about-badge-label { font-size: 0.52rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(8,8,8,0.7); text-align: center; line-height: 1.3; }
+
+.about-corner-accent {
+  position: absolute; top: -12px; left: -12px;
+  width: 60px; height: 60px;
+  border-top: 1px solid var(--gold);
+  border-left: 1px solid var(--gold);
+  border-radius: 4px 0 0 0;
+}
+html[lang="ar"] .about-corner-accent { left:auto; right:-12px; border-left:none; border-right:1px solid var(--gold); border-radius: 0 4px 0 0; }
+
+.about-text-block { }
+.about-intro {
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  color: var(--white-dim); line-height: 1.9; margin-bottom: 2.5rem;
+}
+.about-pillars {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1rem; margin-bottom: 2.5rem;
+}
+.pillar {
+  padding: 1.25rem; border-radius: var(--radius-md);
+  background: var(--black-card); border: 1px solid var(--border);
+  transition: var(--transition);
+}
+.pillar:hover { border-color: var(--border-hover); transform: translateY(-3px); box-shadow: var(--shadow-gold); }
+.pillar-icon-wrap {
+  width: 36px; height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--gold-dim); color: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 0.75rem;
+}
+.pillar-icon-wrap svg { width: 18px; height: 18px; }
+.pillar h4 {
+  font-family: var(--font-display); font-size: 0.95rem; font-weight: 600;
+  color: var(--gold); margin-bottom: 0.3rem;
+}
+html[lang="ar"] .pillar h4 { font-family: var(--font-ar-display); }
+.pillar p { font-size: 0.78rem; color: var(--white-muted); line-height: 1.6; }
+
+/* =============================================
+   PRACTICE AREAS
+   ============================================= */
+#practice-areas { background: var(--black); }
+.practice-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px; margin-top: clamp(2rem, 4vw, 4rem);
+  border: 1.5px solid var(--border); border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.practice-item {
+  background: var(--black-card); padding: 2.5rem 2rem;
+  border-right: 1.5px solid var(--border);
+  border-bottom: 1.5px solid var(--border);
+  transition: var(--transition); position: relative; overflow: hidden;
+  cursor: pointer;
+}
+.practice-item:nth-child(3n) { border-right: none; }
+.practice-item:nth-child(n+4) { border-bottom: none; }
+.practice-item::before {
+  content:''; position:absolute; inset:0;
+  background: linear-gradient(135deg, rgba(201,168,76,0.07), transparent);
+  opacity:0; transition: opacity 0.4s;
+}
+.practice-item:hover::before { opacity: 1; }
+.practice-item:hover { transform: scale(1.01); z-index: 2; border-color: var(--border-hover); box-shadow: var(--shadow-gold); }
+.practice-icon {
+  width: 48px; height: 48px;
+  background: var(--gold-dim); border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold); margin-bottom: 1.25rem;
+  transition: var(--transition);
+}
+.practice-icon svg { width: 24px; height: 24px; }
+.practice-item:hover .practice-icon { background: var(--gold); color: var(--black); }
+.practice-item h3 {
+  font-family: var(--font-display); font-size: 1.2rem; font-weight: 600;
+  color: var(--gold); margin-bottom: 0.25rem;
+}
+html[lang="ar"] .practice-item h3 { font-family: var(--font-ar-display); }
+.practice-sub { font-size: 0.78rem; color: var(--gold); opacity: 0.6; margin-bottom: 0.75rem; }
+.practice-desc { font-size: 0.83rem; color: var(--white-muted); line-height: 1.7; margin-bottom: 1.25rem; }
+.practice-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem; }
+.practice-tag {
+  font-size: 0.65rem; font-weight: 500; letter-spacing: 0.05em;
+  padding: 0.22rem 0.65rem; border-radius: 100px;
+  background: rgba(201,168,76,0.08); color: var(--gold); border: 1px solid rgba(201,168,76,0.2);
+}
+.practice-link {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--gold);
+  display: inline-flex; align-items: center; gap: 6px;
+  transition: gap 0.3s;
+}
+html[lang="ar"] .practice-link { letter-spacing: 0; font-family: var(--font-ar); }
+.practice-item:hover .practice-link { gap: 12px; }
+
+/* =============================================
+   WHY US
+   ============================================= */
+#why-us { background: var(--black-soft); }
+.why-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+html[lang="ar"] .why-layout { direction: rtl; }
+
+.why-left .section-label, .why-left .section-title { text-align: left; }
+html[lang="ar"] .why-left .section-label, html[lang="ar"] .why-left .section-title { text-align: right; }
+.why-intro { font-size: 1rem; color: var(--white-dim); line-height: 1.9; margin-bottom: 2rem; }
+.why-cards { display: flex; flex-direction: column; gap: 1rem; }
+.why-card {
+  display: flex; gap: 1.25rem; align-items: flex-start;
+  padding: 1.5rem; border-radius: var(--radius-md);
+  background: var(--black-card); border: 1px solid var(--border);
+  transition: var(--transition); cursor: default;
+}
+.why-card:hover { border-color: var(--border-hover); transform: translateX(6px); box-shadow: var(--shadow-gold); }
+html[lang="ar"] .why-card:hover { transform: translateX(-6px); }
+.why-card-num {
+  font-family: var(--font-display); font-size: 1.8rem; font-weight: 700;
+  color: rgba(201,168,76,0.2); line-height: 1; flex-shrink: 0;
+  transition: color 0.3s;
+}
+.why-card:hover .why-card-num { color: var(--gold); }
+.why-card-body h4 {
+  font-family: var(--font-display); font-size: 1rem; font-weight: 600;
+  color: var(--gold); margin-bottom: 0.35rem;
+}
+html[lang="ar"] .why-card-body h4 { font-family: var(--font-ar-display); }
+.why-card-body p { font-size: 0.82rem; color: var(--white-muted); line-height: 1.7; }
+
+.why-visual {
+  position: relative; display: flex;
+  align-items: center; justify-content: center;
+}
+.why-hexagon-wrap {
+  width: 340px; height: 340px; position: relative;
+}
+.why-center-circle {
+  position: absolute; top:50%; left:50%; transform: translate(-50%,-50%);
+  width:140px; height:140px; border-radius:50%;
+  background: var(--gold-dim); border: 1px solid var(--border-hover);
+  display: flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center;
+}
+.why-center-num { font-family:var(--font-display); font-size:2.8rem; font-weight:700; color:var(--gold); line-height:1; }
+.why-center-label { font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--white-muted); margin-top:0.25rem; }
+html[lang="ar"] .why-center-label { font-family:var(--font-ar); letter-spacing:0; }
+.why-orbit {
+  position:absolute; inset:0; border-radius:50%;
+  border:1px dashed rgba(201,168,76,0.15);
+  animation: spin 30s linear infinite;
+}
+.why-orbit-2 { inset:20px; animation-duration:20s; animation-direction:reverse; }
+@keyframes spin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+.why-orbit-dot {
+  position:absolute; width:8px; height:8px;
+  background: var(--gold); border-radius:50%;
+  top:50%; left:0; transform:translate(-50%,-50%);
+  box-shadow:0 0 12px var(--gold);
+}
+
+/* =============================================
+   STATS / LEGACY
+   ============================================= */
+#legacy {
+  background: var(--black);
+  position: relative; overflow: hidden;
+}
+#legacy::before {
+  content:''; position:absolute; inset:0;
+  background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(201,168,76,0.05), transparent);
+}
+.stats-row {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0; margin-bottom: clamp(4rem, 7vw, 6rem);
+  border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;
+}
+.stat-box {
+  padding: 3rem 2rem; text-align: center;
+  border-right: 1px solid var(--border);
+  position: relative; overflow: hidden; transition: var(--transition);
+}
+.stat-box:last-child { border-right: none; }
+.stat-box::before { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background: var(--gold); transform:scaleX(0); transition:transform 0.4s; }
+.stat-box:hover::before { transform:scaleX(1); }
+.stat-box:hover { background: rgba(201,168,76,0.03); }
+.stat-num {
+  font-family: var(--font-display); font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 0.5rem;
+}
+html[lang="ar"] .stat-num { font-family: var(--font-ar-display); }
+.stat-label {
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--white-muted);
+}
+html[lang="ar"] .stat-label { font-family: var(--font-ar); letter-spacing: 0; }
+
+.legacy-quote-block {
+  max-width: 780px; margin: 0 auto;
+  text-align: center; position: relative;
+  padding: 3.5rem;
+  border: 1px solid var(--border); border-radius: var(--radius-xl);
+  background: var(--black-card);
+}
+.quote-mark {
+  font-family: var(--font-display); font-size: 8rem; line-height: 1;
+  color: var(--gold); opacity: 0.12; position: absolute;
+  top: 0; left: 3rem; transform: translateY(-30%);
+}
+html[lang="ar"] .quote-mark { left:auto; right:3rem; }
+.quote-text {
+  font-family: var(--font-display); font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 400; font-style: italic; color: var(--white-dim);
+  line-height: 1.8; margin-bottom: 1.5rem;
+}
+html[lang="ar"] .quote-text { font-family: 'Noto Naskh Arabic', serif; font-style: normal; }
+.quote-cite { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+html[lang="ar"] .quote-cite { font-family: var(--font-ar); letter-spacing: 0; }
+
+/* =============================================
+   FAQ
+   ============================================= */
+#faq { background: var(--black-soft); }
+.faq-wrap { max-width: 820px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.faq-btn {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  padding: 1.6rem 0; gap: 2rem; cursor: pointer;
+  transition: color 0.3s;
+}
+.faq-q {
+  font-family: var(--font-display); font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-weight: 600; color: var(--white-dim); text-align: left; transition: color 0.3s;
+}
+html[lang="ar"] .faq-q { font-family: var(--font-ar-display); text-align: right; }
+.faq-btn:hover .faq-q, .faq-item.open .faq-q { color: var(--gold); }
+.faq-icon {
+  width: 28px; height: 28px; flex-shrink: 0;
+  border: 1px solid var(--border); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold); font-size: 1.2rem; line-height: 1;
+  transition: var(--transition);
+}
+.faq-item.open .faq-icon { background: var(--gold); color: var(--black); transform: rotate(45deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1); }
+.faq-item.open .faq-answer { max-height: 400px; }
+.faq-answer p { padding: 0 0 1.75rem; font-size: 0.9rem; color: var(--white-muted); line-height: 1.8; }
+
+/* =============================================
+   CONTACT
+   ============================================= */
+#contact { background: var(--black); }
+.contact-layout { display: grid; grid-template-columns: 1.3fr 1fr; gap: 5rem; align-items: start; }
+html[lang="ar"] .contact-layout { direction: rtl; }
+
+.contact-form-wrap {
+  padding: 3rem; border-radius: var(--radius-xl);
+  background: var(--black-card); border: 1px solid var(--border);
+}
+.form-title {
+  font-family: var(--font-display); font-size: 1.8rem; font-weight: 600;
+  color: var(--gold); margin-bottom: 0.5rem;
+}
+html[lang="ar"] .form-title { font-family: var(--font-ar-display); }
+.form-subtitle { font-size: 0.85rem; color: var(--white-muted); margin-bottom: 2rem; line-height: 1.6; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+.form-group { margin-bottom: 1rem; }
+.form-label {
+  display: block; font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+html[lang="ar"] .form-label { font-family: var(--font-ar); letter-spacing: 0; }
+.form-control {
+  width: 100%; padding: 0.85rem 1.1rem;
+  background: var(--black-soft); color: var(--white);
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+  font-family: var(--font-en); font-size: 0.9rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  outline: none;
+}
+html[lang="ar"] .form-control { font-family: var(--font-ar); }
+.form-control::placeholder { color: rgba(245,240,232,0.2); }
+.form-control:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.1); }
+.form-control option { background: var(--black-card); color: var(--white); }
+textarea.form-control { resize: vertical; min-height: 120px; }
+.form-check { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1.5rem; }
+.form-check input[type="checkbox"] { width:16px; height:16px; accent-color: var(--gold); flex-shrink:0; margin-top:2px; }
+.form-check span { font-size: 0.8rem; color: var(--white-muted); line-height: 1.6; }
+.form-privacy {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.75rem; color: var(--gold); opacity: 0.7;
+  margin-bottom: 1.5rem;
+}
+.form-privacy svg { width: 14px; height: 14px; fill: var(--gold); flex-shrink: 0; }
+.form-submit {
+  width: 100%; padding: 1rem;
+  background: var(--gold); color: var(--black);
+  font-family: var(--font-en); font-size: 0.8rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  border-radius: var(--radius-sm); cursor: pointer; border: none;
+  transition: var(--transition);
+}
+html[lang="ar"] .form-submit { font-family: var(--font-ar); letter-spacing: 0; }
+.form-submit:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(201,168,76,0.3); }
+.form-success {
+  display: none; margin-top: 1rem; padding: 1rem;
+  background: rgba(201,168,76,0.1); border: 1px solid var(--border-hover);
+  border-radius: var(--radius-sm); text-align: center;
+  font-size: 0.85rem; color: var(--gold);
+}
+
+.contact-info-side { padding-top: 0.5rem; }
+.contact-info-side .section-label { text-align: left; }
+html[lang="ar"] .contact-info-side .section-label { text-align: right; }
+.contact-heading {
+  font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 400; color: var(--gold); margin-bottom: 1rem; line-height: 1.2;
+}
+html[lang="ar"] .contact-heading { font-family: var(--font-ar-display); }
+.contact-desc { font-size: 0.9rem; color: var(--white-muted); line-height: 1.8; margin-bottom: 2.5rem; }
+
+.contact-items { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2.5rem; }
+.contact-item { display: flex; gap: 1rem; align-items: flex-start; }
+.contact-item-icon {
+  width: 42px; height: 42px; flex-shrink: 0;
+  border-radius: var(--radius-sm); background: var(--gold-dim);
+  border: 1px solid var(--border); color: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+}
+.contact-item-icon svg { width: 18px; height: 18px; }
+.contact-item-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.2rem; }
+html[lang="ar"] .contact-item-label { font-family: var(--font-ar); letter-spacing: 0; }
+.contact-item-value { font-size: 0.88rem; color: var(--white-dim); }
+
+.hours-block {
+  padding: 1.5rem; border-radius: var(--radius-md);
+  background: var(--black-card); border: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
+.hours-title {
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;
+}
+html[lang="ar"] .hours-title { font-family: var(--font-ar); letter-spacing: 0; }
+.hours-row {
+  display: flex; justify-content: space-between;
+  font-size: 0.82rem; color: var(--white-muted); padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(201,168,76,0.06);
+}
+.hours-row:last-child { border-bottom: none; }
+.hours-row strong { color: var(--white-dim); }
+
+.wa-btn {
+  width: 100%; padding: 0.9rem; border-radius: var(--radius-md);
+  background: rgba(37,211,102,0.1); border: 1px solid rgba(37,211,102,0.25);
+  color: #25d366; font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.06em; display: flex; align-items: center;
+  justify-content: center; gap: 8px; cursor: pointer;
+  transition: var(--transition); text-decoration: none;
+}
+.wa-btn:hover { background: rgba(37,211,102,0.18); transform: translateY(-2px); }
+
+/* =============================================
+   FOOTER
+   ============================================= */
+footer {
+  background: #050505;
+  border-top: 1px solid var(--border);
+  padding-top: 4rem; padding-bottom: 0;
+  position: relative;
+}
+footer::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.footer-inner {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 3rem; padding-bottom: 3.5rem;
+}
+.footer-brand-name {
+  font-family: var(--font-display); font-size: 1.3rem; font-weight: 600;
+  color: var(--gold); margin-bottom: 0.25rem;
+}
+html[lang="ar"] .footer-brand-name { font-family: var(--font-ar-display); }
+.footer-brand-sub {
+  font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--white-muted); margin-bottom: 1.25rem;
+}
+html[lang="ar"] .footer-brand-sub { font-family: var(--font-ar); letter-spacing: 0; }
+.footer-tagline { font-size: 0.82rem; color: var(--white-muted); line-height: 1.7; margin-bottom: 1.5rem; }
+
+.footer-social { display: flex; gap: 0.6rem; }
+.footer-social a {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid var(--border); color: var(--white-muted);
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--transition);
+}
+.footer-social a:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-dim); }
+.footer-social a svg { width: 15px; height: 15px; }
+
+.footer-col-title {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem;
+}
+html[lang="ar"] .footer-col-title { font-family: var(--font-ar); letter-spacing: 0; }
+.footer-links { display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-links a { font-size: 0.82rem; color: var(--white-muted); transition: color 0.3s; }
+.footer-links a:hover { color: var(--gold); }
+
+.footer-contact-row { display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 0.75rem; }
+.footer-contact-icon { color: var(--gold); margin-top: 2px; flex-shrink: 0; }
+.footer-contact-icon svg { width: 14px; height: 14px; }
+.footer-contact-text { font-size: 0.8rem; color: var(--white-muted); }
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 0;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap;
+}
+.footer-copy { font-size: 0.75rem; color: rgba(245,240,232,0.3); }
+.footer-legal { display: flex; gap: 1.5rem; }
+.footer-legal a { font-size: 0.72rem; color: rgba(245,240,232,0.3); transition: color 0.3s; }
+.footer-legal a:hover { color: var(--gold); }
+
+.footer-disclaimer {
+  background: rgba(201,168,76,0.03); border-top: 1px solid var(--border);
+  padding: 1.25rem 0;
+  font-size: 0.72rem; color: rgba(245,240,232,0.25); text-align: center; line-height: 1.7;
+}
+
+/* =============================================
+   TEAM / ATTORNEYS SECTION
+   ============================================= */
+#team { background: var(--black); position: relative; overflow: hidden; }
+#team::before {
+  content:''; position:absolute; inset:0;
+  background: radial-gradient(ellipse 80% 50% at 50% 100%, rgba(201,168,76,0.04), transparent);
+  pointer-events:none;
+}
+
+.team-intro-block {
+  max-width: 720px; margin: 0 auto clamp(3.5rem,6vw,5.5rem);
+  text-align: center;
+}
+.team-intro-block .section-body {
+  max-width: 600px; margin: 0 auto;
+}
+
+/* Office group photo strip */
+.team-photo-strip {
+  position: relative; margin-bottom: clamp(4rem,7vw,6rem);
+  border-radius: var(--radius-xl); overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-deep), 0 0 60px rgba(201,168,76,0.08);
+}
+.team-photo-strip img {
+  width: 100%; height: 420px; object-fit: cover; object-position: top center;
+  display: block;
+  filter: brightness(0.85) contrast(1.05);
+  transition: filter 0.5s ease, transform 0.6s ease;
+}
+.team-photo-strip:hover img { filter: brightness(0.92) contrast(1.08); transform: scale(1.02); }
+.team-photo-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(8,8,8,0.85) 0%, rgba(8,8,8,0.2) 50%, transparent 100%);
+  display: flex; align-items: flex-end; padding: 2.5rem 3rem;
+}
+.team-photo-caption {
+  display: flex; align-items: center; gap: 1.5rem;
+}
+.team-photo-caption-line {
+  width: 48px; height: 1px; background: var(--gold); flex-shrink: 0;
+}
+.team-photo-caption-text {
+  font-family: var(--font-display); font-size: clamp(1rem,2vw,1.4rem);
+  font-weight: 400; color: var(--white-dim); font-style: italic;
+}
+html[lang="ar"] .team-photo-caption-text { font-family: var(--font-ar); font-style: normal; font-size: clamp(0.9rem,1.8vw,1.2rem); }
+
+/* Attorney cards grid */
+.team-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+.attorney-card {
+  background: var(--black-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  transition: var(--transition);
+  position: relative;
+}
+.attorney-card::before {
+  content:''; position:absolute; inset:0;
+  background: linear-gradient(135deg, rgba(201,168,76,0.05), transparent 60%);
+  opacity:0; transition: opacity 0.5s;
+  pointer-events: none;
+}
+.attorney-card:hover { border-color: var(--border-hover); box-shadow: var(--shadow-gold); transform: translateY(-6px); }
+.attorney-card:hover::before { opacity:1; }
+
+.attorney-card-top {
+  position: relative; padding: 2.5rem 2.5rem 0;
+  display: flex; align-items: flex-start; gap: 1.5rem;
+}
+.attorney-number {
+  font-family: var(--font-display); font-size: 4.5rem; font-weight: 700;
+  color: rgba(201,168,76,0.08); line-height: 1; position: absolute;
+  top: 1.5rem; right: 2rem; pointer-events:none; user-select:none;
+}
+html[lang="ar"] .attorney-number { right:auto; left:2rem; }
+
+.attorney-name-block { flex: 1; position: relative; z-index:2; }
+.attorney-title-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold);
+  background: var(--gold-dim); border: 1px solid var(--border);
+  padding: 0.3rem 0.85rem; border-radius: 100px;
+  margin-bottom: 0.75rem;
+}
+html[lang="ar"] .attorney-title-tag { font-family: var(--font-ar); letter-spacing: 0; font-size: 0.72rem; }
+.attorney-title-tag::before { content:''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
+
+.attorney-name {
+  font-family: var(--font-display); font-size: clamp(1.3rem,2.2vw,1.8rem);
+  font-weight: 600; color: var(--gold); line-height: 1.15; margin-bottom: 0.3rem;
+}
+html[lang="ar"] .attorney-name { font-family: var(--font-ar-display); }
+.attorney-role {
+  font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--white-muted);
+}
+html[lang="ar"] .attorney-role { font-family: var(--font-ar); letter-spacing: 0; font-size: 0.8rem; }
+
+.attorney-divider {
+  margin: 1.75rem 2.5rem;
+  height: 1px; background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.attorney-body { padding: 0 2.5rem; }
+.attorney-education {
+  display: flex; gap: 0.75rem; align-items: flex-start;
+  margin-bottom: 1.25rem;
+}
+.attorney-edu-icon {
+  width: 32px; height: 32px; flex-shrink: 0;
+  border-radius: var(--radius-sm); background: var(--gold-dim);
+  border: 1px solid var(--border); color: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  margin-top: 2px;
+}
+.attorney-edu-icon svg { width: 15px; height: 15px; }
+.attorney-edu-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.2rem; }
+html[lang="ar"] .attorney-edu-label { font-family: var(--font-ar); letter-spacing: 0; }
+.attorney-edu-value { font-size: 0.8rem; color: var(--white-dim); line-height: 1.5; }
+
+.attorney-bio {
+  font-size: 0.87rem; color: var(--white-muted); line-height: 1.85;
+  margin-bottom: 1.75rem;
+}
+html[lang="ar"] .attorney-bio { font-family: var(--font-ar); line-height: 2.1; }
+
+.attorney-specialties { margin-bottom: 2rem; }
+.attorney-spec-title {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;
+}
+html[lang="ar"] .attorney-spec-title { font-family: var(--font-ar); letter-spacing: 0; }
+.attorney-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.attorney-tag {
+  font-size: 0.65rem; font-weight: 500;
+  padding: 0.28rem 0.75rem; border-radius: 100px;
+  background: rgba(201,168,76,0.07); color: var(--gold);
+  border: 1px solid rgba(201,168,76,0.2); transition: background 0.3s;
+}
+html[lang="ar"] .attorney-tag { font-family: var(--font-ar); }
+.attorney-tag:hover { background: rgba(201,168,76,0.15); }
+
+.attorney-experience-bar {
+  background: var(--black-soft); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 1.25rem 1.5rem;
+  margin-bottom: 2.5rem;
+  display: flex; align-items: center; gap: 1.25rem;
+}
+.exp-years {
+  font-family: var(--font-display); font-size: 2.4rem; font-weight: 700;
+  color: var(--gold); line-height: 1; flex-shrink: 0;
+}
+html[lang="ar"] .exp-years { font-family: var(--font-ar-display); }
+.exp-label {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--white-muted); line-height: 1.4;
+}
+html[lang="ar"] .exp-label { font-family: var(--font-ar); letter-spacing: 0; }
+.exp-divider { width:1px; height: 32px; background: var(--border); flex-shrink:0; }
+
+@media (max-width: 768px) {
+  .team-grid { grid-template-columns: 1fr; }
+  .team-photo-strip img { height: 260px; }
+  .team-photo-overlay { padding: 1.5rem 1.5rem; }
+  .attorney-card-top { flex-direction: column; gap: 0; }
+  .attorney-number { font-size: 3rem; }
+}
+@media (max-width: 480px) {
+  .attorney-card-top { padding: 1.75rem 1.75rem 0; }
+  .attorney-body { padding: 0 1.75rem; }
+  .attorney-divider { margin: 1.5rem 1.75rem; }
+  .attorney-experience-bar { margin-bottom: 1.75rem; }
+  .attorney-specialties { margin-bottom: 1.5rem; }
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 1024px) {
+  .practice-grid { grid-template-columns: repeat(2,1fr); }
+  .practice-item:nth-child(2n) { border-right:none; }
+  .practice-item:nth-child(3n) { border-right: 1.5px solid var(--border); }
+  .practice-item:nth-child(n+4) { border-bottom: 1.5px solid var(--border); }
+  .practice-item:last-child, .practice-item:nth-last-child(-n+2):nth-child(2n+1) { border-bottom: none; }
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .stats-row { grid-template-columns: repeat(2,1fr); }
+  .stat-box:nth-child(2) { border-right: none; }
+  .stat-box:nth-child(2) { border-bottom: 1px solid var(--border); }
+  .stat-box:nth-child(3) { border-bottom: 1px solid var(--border); }
+}
+
+@media (max-width: 768px) {
+  body { cursor: auto; }
+  .cursor, .cursor-ring { display: none; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-frame { padding-bottom: 80%; }
+  .about-pillars { grid-template-columns: 1fr; }
+  .why-layout { grid-template-columns: 1fr; }
+  .why-visual { display: none; }
+  .practice-grid { grid-template-columns: 1fr; border:none; gap:1rem; }
+  .practice-item { border:1px solid var(--border); border-radius:var(--radius-md); }
+  .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .stats-row { grid-template-columns: repeat(2,1fr); }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .hero-stats { gap: 1.5rem; }
+  .hero-stat-divider { display: none; }
+}
+
+@media (max-width: 480px) {
+  .hero-title { font-size: clamp(2.8rem, 10vw, 4rem); }
+  .hero-ctas { flex-direction: column; align-items: center; }
+}
+
+/* =============================================
+   ARABIC TYPOGRAPHY — PREMIUM PROFESSIONAL
+   ============================================= */
+html[lang="ar"] body {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  direction: rtl;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.9;
+}
+/* Amiri for large display headings — classical Arabic calligraphy feel */
+html[lang="ar"] h1,
+html[lang="ar"] h2 {
+  font-family: 'Readex Pro', sans-serif;
+  letter-spacing: 0;
+  font-weight: 600;
+  line-height: 1.5;
+}
+/* IBM Plex Sans Arabic for smaller headings — clean & modern */
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] h5,
+html[lang="ar"] h6 {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+/* All body, UI, form text */
+html[lang="ar"] p,
+html[lang="ar"] span:not(.testi-star),
+html[lang="ar"] li,
+html[lang="ar"] a,
+html[lang="ar"] label,
+html[lang="ar"] input,
+html[lang="ar"] textarea,
+html[lang="ar"] select,
+html[lang="ar"] button {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  letter-spacing: 0;
+}
+/* Hero title — Amiri shines at large sizes */
+html[lang="ar"] .hero-title {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: clamp(3rem, 8.5vw, 7rem);
+  line-height: 1.3;
+  font-weight: 600;
+}
+html[lang="ar"] .hero-eyebrow {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-size: 0.84rem;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+html[lang="ar"] .hero-subtitle {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-size: clamp(0.88rem, 1.8vw, 1rem);
+  letter-spacing: 0;
+  font-weight: 400;
+}
+html[lang="ar"] .section-label {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+html[lang="ar"] .section-title {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.5;
+}
+html[lang="ar"] .section-body {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  line-height: 2;
+}
+html[lang="ar"] .about-intro {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  line-height: 2.1;
+}
+html[lang="ar"] .why-intro {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  line-height: 2;
+}
+html[lang="ar"] .btn-gold,
+html[lang="ar"] .btn-outline,
+html[lang="ar"] .nav-cta,
+html[lang="ar"] .form-submit,
+html[lang="ar"] .wa-btn {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+html[lang="ar"] .logo-name {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+html[lang="ar"] .logo-sub {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0;
+}
+html[lang="ar"] .nav-links a {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0;
+}
+html[lang="ar"] .mobile-menu a {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+/* Quote/testimonial in Amiri for elegance */
+html[lang="ar"] .quote-text,
+html[lang="ar"] .testi-text {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-size: clamp(0.92rem, 1.5vw, 1.05rem);
+  line-height: 2.1;
+  font-weight: 400;
+  font-style: normal;
+}
+html[lang="ar"] .testi-name {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+html[lang="ar"] .testi-role,
+html[lang="ar"] .testi-tag {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  letter-spacing: 0;
+  font-size: 0.78rem;
+}
+html[lang="ar"] .stat-num {
+  font-family: 'Readex Pro', sans-serif;
+}
+html[lang="ar"] .stat-label,
+html[lang="ar"] .hero-stat-label,
+html[lang="ar"] .why-center-label {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  letter-spacing: 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+html[lang="ar"] .form-label,
+html[lang="ar"] .contact-item-label,
+html[lang="ar"] .hours-title,
+html[lang="ar"] .footer-col-title {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+html[lang="ar"] .faq-q {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: right;
+}
+html[lang="ar"] .practice-item h3 {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+html[lang="ar"] .footer-brand-name {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+html[lang="ar"] .contact-heading {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.5;
+}
+html[lang="ar"] .form-title {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 2rem;
+}
+
+/* =============================================
+   TESTIMONIALS SECTION — LUXURY MARQUEE
+   ============================================= */
+#testimonials {
+  background: var(--black-soft);
+  position: relative;
+  overflow: hidden;
+  padding: clamp(5rem, 10vw, 9rem) 0 0;
+}
+#testimonials::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 15% 50%, rgba(201,168,76,0.05) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 60% at 85% 50%, rgba(201,168,76,0.04) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* Two-row marquee wrapper */
+.testi-rows { display: flex; flex-direction: column; gap: 1.5rem; margin: clamp(2.5rem,4vw,4rem) 0 0; padding-bottom: clamp(3rem,5vw,5rem); }
+
+/* Each marquee row */
+.testi-marquee {
+  position: relative;
+  overflow: hidden;
+  padding: 0.5rem 0;
+}
+.testi-marquee::before,
+.testi-marquee::after {
+  content: '';
+  position: absolute; top: 0; bottom: 0;
+  width: 200px; z-index: 3; pointer-events: none;
+}
+.testi-marquee::before { left: 0; background: linear-gradient(90deg, var(--black-soft) 30%, transparent); }
+.testi-marquee::after  { right: 0; background: linear-gradient(-90deg, var(--black-soft) 30%, transparent); }
+
+/* Scrolling track */
+.testi-track {
+  display: flex; gap: 1.5rem;
+  width: max-content;
+  animation: testi-ltr 60s linear infinite;
+  padding: 1rem 20px;
+  will-change: transform;
+}
+.testi-track.rtl-track {
+  animation: testi-rtl 55s linear infinite;
+}
+.testi-track:hover { animation-play-state: paused; }
+html[lang="ar"] .testi-track       { animation-direction: reverse; }
+html[lang="ar"] .testi-track.rtl-track { animation-direction: normal; }
+
+@keyframes testi-ltr {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes testi-rtl {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* ── Card ── */
+.testi-card {
+  width: 370px; flex-shrink: 0;
+  padding: 2rem 2rem 1.75rem;
+  background: linear-gradient(145deg, #181614 0%, #111010 100%);
+  border: 1px solid rgba(201,168,76,0.14);
+  border-radius: 20px;
+  position: relative;
+  transition: border-color 0.4s, box-shadow 0.4s, transform 0.4s;
+  cursor: default; overflow: hidden;
+}
+.testi-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0; transition: opacity 0.4s;
+}
+.testi-card:hover {
+  border-color: rgba(201,168,76,0.4);
+  box-shadow: 0 24px 64px rgba(201,168,76,0.1), 0 4px 20px rgba(0,0,0,0.4);
+  transform: translateY(-4px);
+}
+.testi-card:hover::before { opacity: 1; }
+
+/* Decorative quote mark */
+.testi-qmark {
+  position: absolute; top: 1rem; right: 1.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5.5rem; line-height: 1;
+  color: var(--gold); opacity: 0.07;
+  pointer-events: none; user-select: none;
+}
+html[lang="ar"] .testi-qmark { right: auto; left: 1.5rem; font-family: 'Readex Pro', sans-serif; }
+
+/* Stars */
+.testi-stars { display: flex; gap: 2px; margin-bottom: 1.1rem; }
+.testi-star { color: var(--gold); font-size: 0.82rem; }
+.testi-star.half { opacity: 0.35; }
+
+/* Review text */
+.testi-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.88rem; font-style: italic;
+  color: rgba(245,240,232,0.72); line-height: 1.85;
+  margin-bottom: 1.5rem; min-height: 95px;
+}
+html[lang="ar"] .testi-text {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-size: 0.92rem; font-style: normal;
+  line-height: 2.1;
+}
+
+/* Divider */
+.testi-hr {
+  width: 100%; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.2), transparent);
+  margin-bottom: 1.25rem;
+}
+
+/* Author row */
+.testi-author { display: flex; align-items: center; gap: 0.85rem; }
+.testi-avatar {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: rgba(201,168,76,0.1);
+  border: 1.5px solid rgba(201,168,76,0.35);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; font-weight: 600; color: var(--gold);
+  flex-shrink: 0;
+}
+html[lang="ar"] .testi-avatar { font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 1rem; font-weight: 700; }
+.testi-meta { flex: 1; min-width: 0; }
+.testi-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.92rem; font-weight: 700;
+  color: var(--white); margin-bottom: 0.15rem;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+html[lang="ar"] .testi-name { font-family: 'IBM Plex Sans Arabic', sans-serif; font-weight: 700; }
+.testi-role {
+  font-size: 0.7rem; color: rgba(245,240,232,0.38);
+  letter-spacing: 0.04em; text-transform: uppercase;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+html[lang="ar"] .testi-role {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  letter-spacing: 0; text-transform: none; font-size: 0.75rem;
+}
+.testi-badge {
+  font-size: 0.62rem; font-weight: 700;
+  padding: 0.22rem 0.7rem;
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.22);
+  border-radius: 100px; color: var(--gold);
+  white-space: nowrap; flex-shrink: 0;
+}
+html[lang="ar"] .testi-badge { font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 0.7rem; }
+
+/* ─── Trust bar ─── */
+.testi-trust {
+  display: flex; align-items: center; justify-content: center;
+  gap: clamp(2rem, 5vw, 4rem);
+  padding: 2.5rem 0 clamp(3.5rem, 6vw, 5.5rem);
+  border-top: 1px solid rgba(201,168,76,0.12);
+  flex-wrap: wrap;
+}
+.testi-trust-item {
+  display: flex; align-items: center; gap: 0.7rem;
+  color: rgba(245,240,232,0.5); font-size: 0.82rem; font-weight: 500;
+}
+html[lang="ar"] .testi-trust-item { font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 0.85rem; }
+.testi-trust-ico {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.18);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold); flex-shrink: 0;
+}
+.testi-trust-ico svg { width: 16px; height: 16px; }
+
+
+body::after {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:9990;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity: 0.4;
+}
+
+/* =============================================
+   SCROLLBAR
+   ============================================= */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+/* ── Attorney Social Links ── */
+.attorney-social {
+  display:flex; gap:0.6rem; flex-wrap:wrap;
+  padding:1.25rem 2.5rem 2.5rem;
+  border-top:1px solid rgba(201,168,76,0.1);
+  position: relative; z-index: 3;
+}
+.attorney-social-link {
+  display:inline-flex; align-items:center; gap:0.4rem;
+  padding:0.4rem 0.85rem; border-radius:100px;
+  border:1px solid var(--border); font-size:0.68rem;
+  font-weight:600; color:var(--white-muted);
+  transition:var(--transition); text-decoration:none;
+}
+.attorney-social-link svg{width:13px;height:13px;flex-shrink:0;}
+.attorney-social-link:hover{color:var(--gold);border-color:var(--border-hover);background:var(--gold-dim);transform:translateY(-2px);}
+.attorney-social-link.instagram:hover{color:#e1306c;border-color:rgba(225,48,108,0.4);background:rgba(225,48,108,0.07);}
+.attorney-social-link.facebook:hover{color:#1877f2;border-color:rgba(24,119,242,0.4);background:rgba(24,119,242,0.07);}
+.attorney-social-link.linkedin:hover{color:#0a66c2;border-color:rgba(10,102,194,0.4);background:rgba(10,102,194,0.07);}
+.attorney-social-link.phone:hover{color:#25d366;border-color:rgba(37,211,102,0.4);background:rgba(37,211,102,0.07);}
+@media(max-width:480px){.attorney-social{padding:1rem 1.75rem 1.75rem;}.attorney-social-link{font-size:0.64rem;padding:0.35rem 0.7rem;}}
+
+/* =============================================
+   MOBILE PROFESSIONAL POLISH
+   ============================================= */
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar { padding: 0 1.25rem; height: 60px; }
+  .logo-text { font-size: 1rem; }
+  .logo-sub { font-size: 0.55rem; letter-spacing: 0.1em; }
+  .hamburger { display: flex !important; }
+  .nav-links, .nav-cta { display: none !important; }
+
+  /* Hero */
+  .hero { padding-top: 60px; }
+  .hero-label { font-size: 0.6rem; letter-spacing: 0.15em; margin-bottom: 1.25rem; }
+  .hero-ctas { flex-direction: column; align-items: stretch; gap: 0.75rem; padding: 0 1rem; }
+  .btn-primary, .btn-outline { width: 100%; justify-content: center; font-size: 0.75rem; padding: 0.9rem 1.5rem; }
+  .hero-stats { gap: 1rem; flex-wrap: wrap; justify-content: center; padding: 0 1rem; }
+  .hero-stat-num { font-size: 2rem; }
+  .hero-stat-label { font-size: 0.6rem; }
+
+  /* About */
+  .about-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .about-frame { padding-bottom: 90%; }
+  .about-badge { width: 100px; height: 100px; bottom: -15px; right: -10px; }
+  .about-badge-num { font-size: 1.5rem; }
+  .about-badge-label { font-size: 0.5rem; }
+
+  /* Team */
+  .team-grid { grid-template-columns: 1fr; }
+  .attorney-card { margin: 0; }
+  .attorney-card-top { flex-direction: column; gap: 0; padding: 1.5rem 1.5rem 0; }
+  .attorney-number { font-size: 3rem; margin-bottom: -0.5rem; }
+  .attorney-body { padding: 0 1.5rem; }
+  .attorney-divider { margin: 1.25rem 1.5rem; }
+  .attorney-bio { font-size: 0.82rem; }
+  .attorney-tags { gap: 0.4rem; }
+  .attorney-tag { font-size: 0.65rem; padding: 0.3rem 0.6rem; }
+  .attorney-social { padding: 1rem 1.5rem 1.5rem; gap: 0.45rem; }
+  .attorney-social-link { font-size: 0.64rem; padding: 0.35rem 0.7rem; }
+
+  /* Practice */
+  .practice-grid { grid-template-columns: 1fr; border: none; gap: 0.75rem; }
+  .practice-item { border: 1px solid var(--border) !important; border-radius: var(--radius-md) !important; padding: 1.5rem; }
+
+  /* Stats */
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .stat-num { font-size: 2.5rem; }
+
+  /* Contact */
+  .contact-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .contact-form-wrap { padding: 1.75rem; border-radius: var(--radius-lg); }
+
+  /* Footer */
+  .footer-inner { grid-template-columns: 1fr; gap: 1.75rem; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 0.5rem; }
+
+  /* Section headings */
+  .section-title { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+  .container { padding: 0 1.25rem; }
+  section { padding: clamp(3rem, 8vw, 4rem) 0; }
+}
+
+@media (max-width: 480px) {
+  /* Hero */
+  .hero-title { font-size: clamp(2.2rem, 9vw, 3.2rem) !important; line-height: 1.1; }
+  .hero-title.ar-content { font-size: clamp(1.8rem, 8vw, 2.6rem) !important; }
+
+  /* About badge */
+  .about-badge { width: 90px; height: 90px; bottom: -12px; right: -8px; }
+  .about-badge-num { font-size: 1.35rem; }
+
+  /* Stats */
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .stat-num { font-size: 2rem; }
+  .stat-label { font-size: 0.65rem; }
+
+  /* Testimonials */
+  .testi-card { width: 290px; padding: 1.5rem; }
+
+  /* FAQ */
+  .faq-question { font-size: 0.85rem; padding: 1rem 1.25rem; }
+
+  /* Contact form */
+  .contact-form-wrap { padding: 1.25rem; border-radius: var(--radius-md); }
+  .form-control { font-size: 0.85rem; padding: 0.75rem 1rem; }
+  .form-submit { font-size: 0.8rem; padding: 0.9rem; }
+  .form-title { font-size: 1.5rem; }
+
+  /* Attorney social on very small screens */
+  .attorney-social { flex-direction: row; flex-wrap: wrap; }
+  .attorney-social-link { font-size: 0.62rem; padding: 0.32rem 0.65rem; }
+}
+
+/* Fix touch targets - minimum 44px for all interactive elements on mobile */
+@media (max-width: 768px) {
+  .attorney-social-link { min-height: 36px; display: inline-flex; align-items: center; }
+  .form-control { min-height: 48px; }
+  .btn-primary, .btn-outline { min-height: 50px; }
+  .faq-question { min-height: 50px; display: flex; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- =============================================
+     NAVIGATION
+     ============================================= -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="#hero" class="navbar-logo">
+        <span class="logo-name">
+          <span class="en-inline">Al-Jaradat & Abu Sweilem</span>
+          <span class="ar-inline">الجرادات وأبو سويلم</span>
+        </span>
+        <span class="logo-sub">
+          <span class="en-inline">Attorneys & Legal Consultants</span>
+          <span class="ar-inline">محامون ومستشارون قانونيون</span>
+        </span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#hero"><span class="en-inline">Home</span><span class="ar-inline">الرئيسية</span></a></li>
+        <li><a href="#about"><span class="en-inline">About</span><span class="ar-inline">عن المكتب</span></a></li>
+        <li><a href="#team"><span class="en-inline">Our Team</span><span class="ar-inline">فريقنا</span></a></li>
+        <li><a href="#practice-areas"><span class="en-inline">Practice Areas</span><span class="ar-inline">الاختصاصات</span></a></li>
+        <li><a href="#why-us"><span class="en-inline">Why Us</span><span class="ar-inline">لماذا نحن</span></a></li>
+        <li><a href="#testimonials"><span class="en-inline">Reviews</span><span class="ar-inline">الآراء</span></a></li><li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact"><span class="en-inline">Contact</span><span class="ar-inline">تواصل</span></a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="lang-toggle">
+          <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+          <button id="btn-ar" onclick="setLang('ar')">AR</button>
+        </div>
+        <a href="#contact" class="nav-cta">
+          <span class="en-inline">Book Consultation</span>
+          <span class="ar-inline">احجز استشارة</span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-close" id="mobile-close">✕</button>
+  <a href="#hero" onclick="closeMobile()"><span class="en-inline">Home</span><span class="ar-inline">الرئيسية</span></a>
+  <a href="#about" onclick="closeMobile()"><span class="en-inline">About</span><span class="ar-inline">عن المكتب</span></a>
+  <a href="#team" onclick="closeMobile()"><span class="en-inline">Our Team</span><span class="ar-inline">فريقنا</span></a>
+  <a href="#practice-areas" onclick="closeMobile()"><span class="en-inline">Practice Areas</span><span class="ar-inline">الاختصاصات</span></a>
+  <a href="#why-us" onclick="closeMobile()"><span class="en-inline">Why Us</span><span class="ar-inline">لماذا نحن</span></a>
+  <a href="#testimonials" onclick="closeMobile()"><span class="en-inline">Reviews</span><span class="ar-inline">الآراء</span></a>
+  <a href="#faq" onclick="closeMobile()">FAQ</a>
+  <a href="#contact" onclick="closeMobile()"><span class="en-inline">Contact</span><span class="ar-inline">تواصل</span></a>
+  <div class="lang-toggle" style="margin-top:1rem;">
+    <button id="btn-en-m" class="active" onclick="setLang('en')">EN</button>
+    <button id="btn-ar-m" onclick="setLang('ar')">AR</button>
+  </div>
+</div>
+
+<!-- =============================================
+     HERO
+     ============================================= -->
+<section id="hero">
+  <div class="hero-canvas"></div>
+  <div class="hero-grid-overlay"></div>
+  <canvas id="particles-canvas"></canvas>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="en-inline">Established Excellence in Legal Practice</span>
+      <span class="ar-inline">تميز راسخ في الممارسة القانونية</span>
+    </div>
+
+    <h1 class="hero-title en-content">Al-Jaradat & Abu Sweilem<br><span>& Partners</span></h1>
+    <h1 class="hero-title ar-content">الجرادات <span>وأبو سويلم</span></h1>
+
+    <div class="hero-title-arabic en-content">الجرادات وأبو سويلم</div>
+
+    <div class="hero-separator">
+      <div class="hero-sep-line"></div>
+      <div class="hero-sep-icon">⚖</div>
+      <div class="hero-sep-line"></div>
+    </div>
+
+    <p class="hero-subtitle">
+      <span class="en-inline">Attorneys & Legal Consultants — Amman, Jordan</span>
+      <span class="ar-inline">محامون ومستشارون قانونيون — عمّان، الأردن</span>
+    </p>
+
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-gold">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span class="en-inline">Book Consultation Now</span>
+        <span class="ar-inline">احجز استشارة الآن</span>
+      </a>
+      <a href="#practice-areas" class="btn-outline">
+        <span class="en-inline">Our Expertise</span>
+        <span class="ar-inline">اختصاصاتنا</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">25+</div>
+        <div class="hero-stat-label"><span class="en-inline">Years Experience</span><span class="ar-inline">سنة خبرة</span></div>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">3000+</div>
+        <div class="hero-stat-label"><span class="en-inline">Cases Won</span><span class="ar-inline">قضية ناجحة</span></div>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">95%</div>
+        <div class="hero-stat-label"><span class="en-inline">Success Rate</span><span class="ar-inline">معدل النجاح</span></div>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">100%</div>
+        <div class="hero-stat-label"><span class="en-inline">Client Commitment</span><span class="ar-inline">الالتزام بالعميل</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll-indicator">
+    <div class="scroll-line"></div>
+    <span class="en-inline">Scroll</span>
+    <span class="ar-inline">تمرير</span>
+  </div>
+</section>
+
+<!-- =============================================
+     ABOUT
+     ============================================= -->
+<section id="about">
+  <div class="container">
+    <div class="about-layout">
+
+      <div class="about-visual-wrap reveal-from-left">
+        <div class="about-frame">
+          <div class="about-frame-inner">
+            <img src="https://i.imgur.com/VFKEM8L.jpeg" alt="Al-Jaradat & Abu Sweilem Law Firm" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;">
+          </div>
+          <div class="about-corner-accent"></div>
+        </div>
+        <div class="about-badge">
+          <div class="about-badge-num">25+</div>
+          <div class="about-badge-label">
+            <span class="en-inline">Years of<br>Excellence</span>
+            <span class="ar-inline">عاماً من<br>التميز</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text-block">
+        <div class="section-label reveal">
+          <span class="en-inline">Our Story</span>
+          <span class="ar-inline">قصتنا</span>
+        </div>
+        <h2 class="section-title reveal">
+          <span class="en-content">Legal Excellence,<br>Redefined.</span>
+          <span class="ar-content">التميز القانوني<br>يُعاد تعريفه.</span>
+        </h2>
+        <div class="gold-line reveal"></div>
+        <p class="about-intro reveal">
+          <span class="en-content">Al-Jaradat & Abu Sweilem stands as a beacon of legal excellence — combining decades of expertise with modern, forward-thinking strategy. We are not just legal representatives. We are trusted advisors committed to protecting your interests with integrity, precision, and an unwavering drive to win.</span>
+          <span class="ar-content">يقف مكتب الجرادات وأبو سويلم كمنارة للتميز القانوني — يجمع بين عقود من الخبرة والتفكير الاستراتيجي الحديث. نحن لسنا مجرد ممثلين قانونيين، بل مستشارون موثوقون ملتزمون بحماية مصالحكم بنزاهة ودقة وإرادة راسخة للفوز.</span>
+        </p>
+        <div class="about-pillars reveal">
+          <div class="pillar reveal-delay-1">
+            <div class="pillar-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h4><span class="en-inline">Proven Expertise</span><span class="ar-inline">خبرة مثبتة</span></h4>
+            <p><span class="en-inline">Decades of successful practice across diverse specializations</span><span class="ar-inline">عقود من الممارسة الناجحة عبر تخصصات متنوعة</span></p>
+          </div>
+          <div class="pillar reveal-delay-2">
+            <div class="pillar-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+            <h4><span class="en-inline">Strategic Vision</span><span class="ar-inline">رؤية استراتيجية</span></h4>
+            <p><span class="en-inline">Tailored legal strategies designed for your unique case</span><span class="ar-inline">استراتيجيات مصممة خصيصاً لقضيتك الفريدة</span></p>
+          </div>
+          <div class="pillar reveal-delay-3">
+            <div class="pillar-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h4><span class="en-inline">Client Partnership</span><span class="ar-inline">شراكة مع العميل</span></h4>
+            <p><span class="en-inline">Lasting relationships built on trust and transparency</span><span class="ar-inline">علاقات دائمة مبنية على الثقة والشفافية</span></p>
+          </div>
+          <div class="pillar reveal-delay-4">
+            <div class="pillar-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h4><span class="en-inline">Bilingual Excellence</span><span class="ar-inline">ثنائي اللغة</span></h4>
+            <p><span class="en-inline">Seamless services in Arabic and English</span><span class="ar-inline">خدمات سلسة بالعربية والإنجليزية</span></p>
+          </div>
+        </div>
+        <div class="reveal">
+          <a href="#contact" class="btn-gold">
+            <span class="en-inline">Schedule a Consultation</span>
+            <span class="ar-inline">احجز موعد استشارة</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     TEAM / ATTORNEYS
+     ============================================= -->
+<section id="team">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="team-intro-block section-header">
+      <div class="section-label reveal" style="justify-content:center;">
+        <span class="en-inline">Our Attorneys</span>
+        <span class="ar-inline">محامو المكتب</span>
+      </div>
+      <h2 class="section-title reveal">
+        <span class="en-content">Meet Our Legal Team</span>
+        <span class="ar-content">فريقنا القانوني</span>
+      </h2>
+      <p class="section-body reveal">
+        <span class="en-content">A distinguished team of legal professionals with decades of combined experience — committed to achieving the best outcomes for our clients.</span>
+        <span class="ar-content">فريق متميز من القانونيين المحترفين يجمع عقوداً من الخبرة المشتركة، ملتزم بتحقيق أفضل النتائج لموكليه.</span>
+      </p>
+    </div>
+
+    <!-- Photo strip -->
+    <div class="team-photo-strip reveal">
+      <img src="https://i.imgur.com/x1MNFLh.jpeg" alt="المحامي عبدالله الجرادات والمحامي علاء أبو سويلم" loading="lazy">
+      <div class="team-photo-overlay">
+        <div class="team-photo-caption">
+          <div class="team-photo-caption-line"></div>
+          <p class="team-photo-caption-text">
+            <span class="en-inline">Abdullah Al-Jaradat &amp; Alaa Abu Sweilem — Senior Partners</span>
+            <span class="ar-inline">المحامي عبدالله الجرادات والمحامي علاء أبو سويلم — الشركاء الرئيسيون</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Attorney Cards Grid -->
+    <div class="team-grid">
+
+      <!-- Attorney 1: Abdullah Al-Jaradat -->
+      <div class="attorney-card reveal reveal-from-left">
+        <div class="attorney-card-top">
+          <div class="attorney-number">01</div>
+          <div class="attorney-name-block">
+            <div class="attorney-title-tag">
+              <span class="en-inline">Senior Partner</span>
+              <span class="ar-inline">شريك رئيسي</span>
+            </div>
+            <div class="attorney-name">
+              <span class="en-inline">Abdullah Al-Jaradat</span>
+              <span class="ar-inline">عبدالله الجرادات</span>
+            </div>
+            <div class="attorney-role">
+              <span class="en-inline">Attorney at Law &amp; Legal Consultant</span>
+              <span class="ar-inline">محامٍ ومستشار قانوني</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="attorney-divider"></div>
+
+        <div class="attorney-body">
+
+          <div class="attorney-education">
+            <div class="attorney-edu-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <div>
+              <div class="attorney-edu-label"><span class="en-inline">Education</span><span class="ar-inline">المؤهلات</span></div>
+              <div class="attorney-edu-value">
+                <span class="en-inline">LLM – International Commercial Law, University of London</span>
+                <span class="ar-inline">ماجستير القانون التجاري الدولي — جامعة لندن</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="attorney-bio">
+            <span class="en-content">A distinguished Jordanian attorney with over 20 years of experience in litigation and legal consulting. Abdullah has dedicated his career to defending clients' rights and delivering precise legal solutions, drawing on a deep understanding of Jordanian legislation and practical judicial practice. His LLM from the University of London strengthened his expertise in corporate governance, restructuring, M&A, and legal frameworks for investment ventures. He also serves as legal counsel to several foreign embassies in Jordan, and has specialized expertise in technology, programming, and AI sector legal services.</span>
+            <span class="ar-content">محامٍ أردني متميز تتجاوز خبرته القانونية عشرين عاماً في ميادين التقاضي والاستشارات القانونية. كرّس مسيرته المهنية للدفاع عن حقوق موكليه وتقديم حلول قانونية دقيقة تستند إلى فهم عميق للتشريعات الأردنية والممارسات القضائية العملية. يحمل درجة الماجستير في القانون التجاري الدولي من جامعة لندن، مما عزز خبرته في حوكمة الشركات والاندماج والاستحواذ وبناء الأطر القانونية للمشاريع الاستثمارية. يمارس أعمال المحاماة في المجالات المدنية والجزائية والتجارية، ويتميز باختصاصه في الأعمال القانونية لشركات البرمجة والتكنولوجيا والذكاء الاصطناعي، فضلاً عن عمله وكيلاً قانونياً لعدد من السفارات الأجنبية في الأردن.</span>
+          </p>
+
+          <div class="attorney-specialties">
+            <div class="attorney-spec-title">
+              <span class="en-inline">Key Specializations</span>
+              <span class="ar-inline">التخصصات الرئيسية</span>
+            </div>
+            <div class="attorney-tags">
+              <span class="attorney-tag"><span class="en-inline">Commercial Litigation</span><span class="ar-inline">التقاضي التجاري</span></span>
+              <span class="attorney-tag"><span class="en-inline">Corporate Law</span><span class="ar-inline">قانون الشركات</span></span>
+              <span class="attorney-tag"><span class="en-inline">M&amp;A</span><span class="ar-inline">الاندماج والاستحواذ</span></span>
+              <span class="attorney-tag"><span class="en-inline">Tech &amp; AI Law</span><span class="ar-inline">قانون التكنولوجيا والذكاء الاصطناعي</span></span>
+              <span class="attorney-tag"><span class="en-inline">IP Protection</span><span class="ar-inline">الملكية الفكرية</span></span>
+              <span class="attorney-tag"><span class="en-inline">Embassy Representation</span><span class="ar-inline">تمثيل السفارات</span></span>
+              <span class="attorney-tag"><span class="en-inline">Real Estate Disputes</span><span class="ar-inline">النزاعات العقارية</span></span>
+              <span class="attorney-tag"><span class="en-inline">Arbitration</span><span class="ar-inline">التحكيم</span></span>
+            </div>
+          </div>
+
+          <div class="attorney-experience-bar">
+            <div class="exp-years">20+</div>
+            <div class="exp-divider"></div>
+            <div class="exp-label">
+              <span class="en-inline">Years of Legal<br>Excellence</span>
+              <span class="ar-inline">عاماً من التميز<br>القانوني</span>
+            </div>
+          </div>
+
+        </div>
+
+          <div class="attorney-social">
+            <a href="tel:+962795666696" class="attorney-social-link phone" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 14a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 3.12h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 10.7a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 18z"/></svg>
+              +962 79 566 6696
+            </a>
+            <a href="https://www.instagram.com/abdullah_jaradat_?igsh=Y3FzNGoyN3dpa3o=" class="attorney-social-link instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </a>
+            <a href="https://www.facebook.com/share/1LKM51FL5S/" class="attorney-social-link facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              Facebook
+            </a>
+            <a href="https://www.linkedin.com/in/abdullah-jaradat-3a703142" class="attorney-social-link linkedin" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+          </div>
+      </div>
+
+      <!-- Attorney 2: Alaa Abu Sweilem -->
+      <div class="attorney-card reveal reveal-from-right">
+        <div class="attorney-card-top">
+          <div class="attorney-number">02</div>
+          <div class="attorney-name-block">
+            <div class="attorney-title-tag">
+              <span class="en-inline">Senior Partner</span>
+              <span class="ar-inline">شريك رئيسي</span>
+            </div>
+            <div class="attorney-name">
+              <span class="en-inline">Alaa M. Abu Sweilem</span>
+              <span class="ar-inline">علاء مفلح أبو سويلم</span>
+            </div>
+            <div class="attorney-role">
+              <span class="en-inline">Attorney at Law &amp; Legal Consultant</span>
+              <span class="ar-inline">محامٍ ومستشار قانوني</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="attorney-divider"></div>
+
+        <div class="attorney-body">
+
+          <div class="attorney-education">
+            <div class="attorney-edu-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <div>
+              <div class="attorney-edu-label"><span class="en-inline">Education</span><span class="ar-inline">المؤهلات</span></div>
+              <div class="attorney-edu-value">
+                <span class="en-inline">LLB – Faculty of Law, Applied Science University, Jordan</span>
+                <span class="ar-inline">بكالوريوس حقوق — جامعة العلوم التطبيقية، الأردن</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="attorney-bio">
+            <span class="en-content">A dedicated attorney with 18 years of legal practice, son of the late prominent lawyer Mufleih Abu Sweilem — a legacy that ignited his passion for justice from a young age. Alaa has represented local and international corporations before Jordanian courts including the State Security Court, handling financial claims, complex contracts, corporate agency work, and strategic negotiations for licensing, leasing, and partnership agreements. He has also mentored junior legal staff, participated in strategic decision-making, and advised on intellectual property and data privacy law.</span>
+            <span class="ar-content">محامٍ متمرس مارس مهنة المحاماة لأكثر من (18) عاماً، وهو ابن المحامي الكبير الراحل مفلح أبو سويلم رحمه الله الذي غرس فيه شغف القانون وتحقيق العدالة منذ نعومة أظافره. ترافع أمام المحاكم الأردنية بما فيها محكمة أمن الدولة، وعمل وكيلاً لعدة شركات محلية ودولية، وتخصص في المطالبات المالية والعقود التجارية وصياغة الاتفاقيات والتفاوض على معاملات الترخيص والتأجير والشراكات والتحالفات الاستراتيجية. كما أشرف على القانونيين المبتدئين وشارك في صنع القرار الاستراتيجي وقدّم المشورة في قانون الملكية الفكرية وحماية البيانات.</span>
+          </p>
+
+          <div class="attorney-specialties">
+            <div class="attorney-spec-title">
+              <span class="en-inline">Key Specializations</span>
+              <span class="ar-inline">التخصصات الرئيسية</span>
+            </div>
+            <div class="attorney-tags">
+              <span class="attorney-tag"><span class="en-inline">Corporate Representation</span><span class="ar-inline">تمثيل الشركات</span></span>
+              <span class="attorney-tag"><span class="en-inline">State Security Court</span><span class="ar-inline">محكمة أمن الدولة</span></span>
+              <span class="attorney-tag"><span class="en-inline">Financial Claims</span><span class="ar-inline">المطالبات المالية</span></span>
+              <span class="attorney-tag"><span class="en-inline">Contract Drafting</span><span class="ar-inline">صياغة العقود</span></span>
+              <span class="attorney-tag"><span class="en-inline">Strategic Partnerships</span><span class="ar-inline">الشراكات الاستراتيجية</span></span>
+              <span class="attorney-tag"><span class="en-inline">IP &amp; Privacy Law</span><span class="ar-inline">الملكية الفكرية والخصوصية</span></span>
+              <span class="attorney-tag"><span class="en-inline">Licensing &amp; Leasing</span><span class="ar-inline">الترخيص والتأجير</span></span>
+              <span class="attorney-tag"><span class="en-inline">Asset Protection</span><span class="ar-inline">حماية الأصول</span></span>
+            </div>
+          </div>
+
+          <div class="attorney-experience-bar">
+            <div class="exp-years">18+</div>
+            <div class="exp-divider"></div>
+            <div class="exp-label">
+              <span class="en-inline">Years of Legal<br>Excellence</span>
+              <span class="ar-inline">عاماً من التميز<br>القانوني</span>
+            </div>
+          </div>
+
+        </div>
+
+          <div class="attorney-social">
+            <a href="tel:+962782735763" class="attorney-social-link phone" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 14a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 3.12h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 10.7a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 18z"/></svg>
+              +962 78 273 5763
+            </a>
+            <a href="https://www.instagram.com/lawyer_alaa_mofleh?igsh=bm1yZHNzY3NjbnRw" class="attorney-social-link instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </a>
+            <a href="https://www.facebook.com/share/17vWxBiayv/" class="attorney-social-link facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              Facebook
+            </a>
+            <a href="https://www.linkedin.com/in/ala%E2%80%99a-mufleh-abuswelem-9241a22aa" class="attorney-social-link linkedin" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+          </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     PRACTICE AREAS
+     ============================================= -->
+<section id="practice-areas">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal" style="justify-content:center;">
+        <span class="en-inline">What We Do</span>
+        <span class="ar-inline">ما نقدمه</span>
+      </div>
+      <h2 class="section-title reveal">
+        <span class="en-content">Practice Areas</span>
+        <span class="ar-content">الاختصاصات القانونية</span>
+      </h2>
+      <p class="section-body reveal">
+        <span class="en-content">Comprehensive legal solutions across all domains — delivered with precision, strategy, and deep expertise.</span>
+        <span class="ar-content">حلول قانونية شاملة عبر جميع المجالات — مقدمة بدقة واستراتيجية وخبرة عميقة.</span>
+      </p>
+    </div>
+
+    <div class="practice-grid">
+      <!-- Civil Law -->
+      <div class="practice-item reveal reveal-delay-1">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3><span class="en-inline">Civil Law</span><span class="ar-inline">القانون المدني</span></h3>
+        <div class="practice-sub"><span class="en-inline">القانون المدني</span><span class="ar-inline">Civil Law</span></div>
+        <p class="practice-desc">
+          <span class="en-content">Comprehensive civil litigation and dispute resolution. Contract disputes, property matters, personal injury claims — handled with strategic precision.</span>
+          <span class="ar-content">خدمات التقاضي المدني الشاملة وحل النزاعات. نزاعات العقود والقضايا العقارية ودعاوى الضرر — بدقة استراتيجية.</span>
+        </p>
+        <div class="practice-tags">
+          <span class="practice-tag"><span class="en-inline">Contract Disputes</span><span class="ar-inline">نزاعات العقود</span></span>
+          <span class="practice-tag"><span class="en-inline">Property Litigation</span><span class="ar-inline">القضايا العقارية</span></span>
+          <span class="practice-tag"><span class="en-inline">Civil Rights</span><span class="ar-inline">الحقوق المدنية</span></span>
+        </div>
+        <a href="#contact" class="practice-link">
+          <span class="en-inline">Get Expert Help</span><span class="ar-inline">احصل على مساعدة</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Commercial -->
+      <div class="practice-item reveal reveal-delay-2">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3><span class="en-inline">Commercial & Corporate</span><span class="ar-inline">التجاري والشركات</span></h3>
+        <div class="practice-sub"><span class="en-inline">القانون التجاري وقانون الشركات</span><span class="ar-inline">Commercial & Corporate Law</span></div>
+        <p class="practice-desc">
+          <span class="en-content">Expert guidance at every business stage — from formation to M&A. We protect your interests and facilitate growth.</span>
+          <span class="ar-content">إرشاد متخصص في كل مرحلة من مراحل الأعمال — من التأسيس إلى الاندماج. نحمي مصالحكم ونيسر النمو.</span>
+        </p>
+        <div class="practice-tags">
+          <span class="practice-tag"><span class="en-inline">Company Formation</span><span class="ar-inline">تأسيس الشركات</span></span>
+          <span class="practice-tag"><span class="en-inline">M&A Transactions</span><span class="ar-inline">الاندماج والاستحواذ</span></span>
+          <span class="practice-tag"><span class="en-inline">Governance</span><span class="ar-inline">الحوكمة</span></span>
+        </div>
+        <a href="#contact" class="practice-link">
+          <span class="en-inline">Get Expert Help</span><span class="ar-inline">احصل على مساعدة</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Arbitration -->
+      <div class="practice-item reveal reveal-delay-3">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <h3><span class="en-inline">Arbitration & Mediation</span><span class="ar-inline">التحكيم والوساطة</span></h3>
+        <div class="practice-sub"><span class="en-inline">التحكيم والوساطة</span><span class="ar-inline">Arbitration & Mediation</span></div>
+        <p class="practice-desc">
+          <span class="en-content">Alternative dispute resolution excellence. Confidential, efficient resolution of complex commercial and international disputes.</span>
+          <span class="ar-content">تميز في حل النزاعات البديل. حل سري وفعّال للنزاعات التجارية والدولية المعقدة.</span>
+        </p>
+        <div class="practice-tags">
+          <span class="practice-tag"><span class="en-inline">Commercial Arbitration</span><span class="ar-inline">التحكيم التجاري</span></span>
+          <span class="practice-tag"><span class="en-inline">International ADR</span><span class="ar-inline">التحكيم الدولي</span></span>
+          <span class="practice-tag"><span class="en-inline">Award Enforcement</span><span class="ar-inline">تنفيذ الأحكام</span></span>
+        </div>
+        <a href="#contact" class="practice-link">
+          <span class="en-inline">Get Expert Help</span><span class="ar-inline">احصل على مساعدة</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Criminal Defense -->
+      <div class="practice-item reveal reveal-delay-1">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3><span class="en-inline">Criminal Defense</span><span class="ar-inline">الدفاع الجنائي</span></h3>
+        <div class="practice-sub"><span class="en-inline">الدفاع الجنائي</span><span class="ar-inline">Criminal Defense</span></div>
+        <p class="practice-desc">
+          <span class="en-content">Vigorous defense of your rights and freedom. Meticulous preparation and unwavering commitment to your case — every time.</span>
+          <span class="ar-content">دفاع قوي عن حقوقكم وحريتكم. إعداد دقيق والتزام راسخ بقضيتكم — في كل مرة.</span>
+        </p>
+        <div class="practice-tags">
+          <span class="practice-tag"><span class="en-inline">Criminal Defense</span><span class="ar-inline">الدفاع الجنائي</span></span>
+          <span class="practice-tag"><span class="en-inline">White Collar</span><span class="ar-inline">الياقات البيضاء</span></span>
+          <span class="practice-tag"><span class="en-inline">Appeals</span><span class="ar-inline">الطعون</span></span>
+        </div>
+        <a href="#contact" class="practice-link">
+          <span class="en-inline">Get Expert Help</span><span class="ar-inline">احصل على مساعدة</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Contracts -->
+      <div class="practice-item reveal reveal-delay-2">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h3><span class="en-inline">Contract Services</span><span class="ar-inline">خدمات العقود</span></h3>
+        <div class="practice-sub"><span class="en-inline">صياغة ومراجعة العقود</span><span class="ar-inline">Contract Drafting & Review</span></div>
+        <p class="practice-desc">
+          <span class="en-content">Precision in every word. Legally sound agreements that protect your interests and minimize future disputes.</span>
+          <span class="ar-content">دقة في كل كلمة. اتفاقيات سليمة قانونياً تحمي مصالحكم وتقلل النزاعات المستقبلية.</span>
+        </p>
+        <div class="practice-tags">
+          <span class="practice-tag"><span class="en-inline">Drafting</span><span class="ar-inline">صياغة العقود</span></span>
+          <span class="practice-tag"><span class="en-inline">Review</span><span class="ar-inline">مراجعة الاتفاقيات</span></span>
+          <span class="practice-tag"><span class="en-inline">Negotiation</span><span class="ar-inline">التفاوض</span></span>
+        </div>
+        <a href="#contact" class="practice-link">
+          <span class="en-inline">Get Expert Help</span><span class="ar-inline">احصل على مساعدة</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Legal Consultation -->
+      <div class="practice-item reveal reveal-delay-3">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3><span class="en-inline">Legal Consultation</span><span class="ar-inline">الاستشارات القانونية</span></h3>
+        <div class="practice-sub"><span class="en-inline">الاستشارات القانونية</span><span class="ar-inline">Legal Consultation</span></div>
+        <p class="practice-desc">
+          <span class="en-content">Strategic legal advice for informed decisions. Comprehensive consultations helping you navigate complex legal landscapes with confidence.</span>
+          <span class="ar-content">مشورة قانونية استراتيجية لقرارات مستنيرة. استشارات شاملة تساعدك على التنقل بثقة في المشهد القانوني.</span>
+        </p>
+        <div class="practice-tags">
+          <span class="practice-tag"><span class="en-inline">Legal Opinions</span><span class="ar-inline">الآراء القانونية</span></span>
+          <span class="practice-tag"><span class="en-inline">Risk Analysis</span><span class="ar-inline">تحليل المخاطر</span></span>
+          <span class="practice-tag"><span class="en-inline">Compliance</span><span class="ar-inline">الامتثال</span></span>
+        </div>
+        <a href="#contact" class="practice-link">
+          <span class="en-inline">Get Expert Help</span><span class="ar-inline">احصل على مساعدة</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     WHY US
+     ============================================= -->
+<section id="why-us">
+  <div class="container">
+    <div class="why-layout">
+      <div class="why-left">
+        <div class="section-label reveal">
+          <span class="en-inline">Our Difference</span>
+          <span class="ar-inline">ما يميزنا</span>
+        </div>
+        <h2 class="section-title reveal">
+          <span class="en-content">Why Al-Jaradat &<br>Abu Sweilem?</span>
+          <span class="ar-content">لماذا أبو سويلم<br>وشركاؤه؟</span>
+        </h2>
+        <p class="why-intro reveal">
+          <span class="en-content">Choosing legal representation is one of the most important decisions you'll make. Here's what sets us apart from the rest.</span>
+          <span class="ar-content">اختيار التمثيل القانوني من أهم القرارات التي ستتخذها. إليك ما يميزنا عن الجميع.</span>
+        </p>
+        <div class="why-cards">
+          <div class="why-card reveal reveal-delay-1">
+            <div class="why-card-num">01</div>
+            <div class="why-card-body">
+              <h4><span class="en-inline">Proven Track Record</span><span class="ar-inline">سجل حافل بالنجاح</span></h4>
+              <p><span class="en-content">Decades of successful outcomes across thousands of cases. Results, not promises.</span><span class="ar-content">عقود من النتائج الناجحة عبر آلاف القضايا. نتائج لا وعود.</span></p>
+            </div>
+          </div>
+          <div class="why-card reveal reveal-delay-2">
+            <div class="why-card-num">02</div>
+            <div class="why-card-body">
+              <h4><span class="en-inline">Personalized Service</span><span class="ar-inline">خدمة شخصية</span></h4>
+              <p><span class="en-content">Direct access to experienced attorneys. Your case gets our full attention — never passed to junior associates.</span><span class="ar-content">وصول مباشر لمحامين ذوي خبرة. قضيتك تحظى باهتمامنا الكامل.</span></p>
+            </div>
+          </div>
+          <div class="why-card reveal reveal-delay-3">
+            <div class="why-card-num">03</div>
+            <div class="why-card-body">
+              <h4><span class="en-inline">Strategic Approach</span><span class="ar-inline">نهج استراتيجي</span></h4>
+              <p><span class="en-content">We don't just react — we strategize. Proactive counsel that anticipates challenges before they arise.</span><span class="ar-content">نحن لا نتفاعل فحسب — بل نضع الاستراتيجيات. مشورة استباقية تتوقع التحديات.</span></p>
+            </div>
+          </div>
+          <div class="why-card reveal reveal-delay-4">
+            <div class="why-card-num">04</div>
+            <div class="why-card-body">
+              <h4><span class="en-inline">Transparent Communication</span><span class="ar-inline">تواصل شفاف</span></h4>
+              <p><span class="en-content">Clear, honest updates at every stage. You're always informed and empowered.</span><span class="ar-content">تحديثات واضحة وصادقة في كل مرحلة. أنتم دائماً على اطلاع.</span></p>
+            </div>
+          </div>
+          <div class="why-card reveal reveal-delay-5">
+            <div class="why-card-num">05</div>
+            <div class="why-card-body">
+              <h4><span class="en-inline">Bilingual Excellence</span><span class="ar-inline">تميز ثنائي اللغة</span></h4>
+              <p><span class="en-content">Seamless Arabic and English services. We bridge cultural and linguistic divides effortlessly.</span><span class="ar-content">خدمات سلسة بالعربية والإنجليزية. نجسر الفجوات الثقافية واللغوية بسهولة.</span></p>
+            </div>
+          </div>
+          <div class="why-card reveal reveal-delay-6">
+            <div class="why-card-num">06</div>
+            <div class="why-card-body">
+              <h4><span class="en-inline">Comprehensive Expertise</span><span class="ar-inline">خبرة شاملة</span></h4>
+              <p><span class="en-content">Full spectrum legal services under one roof — from consultation to courtroom.</span><span class="ar-content">خدمات قانونية شاملة تحت سقف واحد — من الاستشارة إلى قاعة المحكمة.</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-visual">
+        <div class="why-hexagon-wrap">
+          <div class="why-orbit"></div>
+          <div class="why-orbit why-orbit-2"></div>
+          <div class="why-center-circle">
+            <div class="why-center-num">95%</div>
+            <div class="why-center-label">
+              <span class="en-inline">Success Rate</span>
+              <span class="ar-inline">معدل النجاح</span>
+            </div>
+          </div>
+          <div class="why-orbit-dot"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     STATS / LEGACY
+     ============================================= -->
+<section id="legacy">
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="section-header">
+      <div class="section-label reveal" style="justify-content:center;">
+        <span class="en-inline">Our Heritage</span>
+        <span class="ar-inline">إرثنا</span>
+      </div>
+      <h2 class="section-title reveal">
+        <span class="en-content">A Legacy of Excellence</span>
+        <span class="ar-content">إرث من التميز</span>
+      </h2>
+    </div>
+
+    <div class="stats-row reveal">
+      <div class="stat-box">
+        <div class="stat-num">25+</div>
+        <div class="stat-label"><span class="en-inline">Years Experience</span><span class="ar-inline">سنة خبرة</span></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">3000+</div>
+        <div class="stat-label"><span class="en-inline">Cases Handled</span><span class="ar-inline">قضية تمت معالجتها</span></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">95%</div>
+        <div class="stat-label"><span class="en-inline">Success Rate</span><span class="ar-inline">معدل النجاح</span></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">100%</div>
+        <div class="stat-label"><span class="en-inline">Client Commitment</span><span class="ar-inline">الالتزام بالعميل</span></div>
+      </div>
+    </div>
+
+    <div class="legacy-quote-block reveal">
+      <div class="quote-mark">"</div>
+      <p class="quote-text">
+        <span class="en-content">"Justice is not merely a profession — it is our calling, our commitment, and our promise to every client who trusts us with their most important matters."</span>
+        <span class="ar-content">"العدالة ليست مجرد مهنة — إنها دعوتنا، التزامنا، ووعدنا لكل عميل يثق بنا في أهم قضاياه."</span>
+      </p>
+      <div class="quote-cite">— Al-Jaradat & Abu Sweilem | الجرادات وأبو سويلم</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =============================================
+     TESTIMONIALS
+     ============================================= -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal" style="justify-content:center;">
+        <span class="en-inline">Client Stories</span>
+        <span class="ar-inline">ما يقوله عملاؤنا</span>
+      </div>
+      <h2 class="section-title reveal">
+        <span class="en-content">Trusted by Those<br>Who Matter Most</span>
+        <span class="ar-content">ثقة عملائنا<br>هي أعظم جائزة</span>
+      </h2>
+      <p class="section-body reveal">
+        <span class="en-content">Real clients. Real outcomes. See why hundreds trust Al-Jaradat & Abu Sweilem with their most important legal matters.</span>
+        <span class="ar-content">عملاء حقيقيون. نتائج حقيقية. اكتشف لماذا يثق المئات بمكتب الجرادات وأبو سويلم في أهم قضاياهم القانونية.</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="testi-rows">
+
+    <!-- ══ ROW 1 — scrolls left ══ -->
+    <div class="testi-marquee">
+      <div class="testi-track" id="trow1">
+
+        <!-- C1 -->
+        <div class="testi-card">
+          <div class="testi-qmark">"</div>
+          <div class="testi-stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+          <p class="testi-text">
+            <span class="en-content">Al-Jaradat & Abu Sweilem handled our complex commercial dispute with exceptional professionalism. They turned a seemingly impossible case into a decisive victory. I cannot recommend them highly enough.</span>
+            <span class="ar-content">تعامل مكتب الجرادات وأبو سويلم مع نزاعنا التجاري المعقد باحترافية استثنائية. حوّلوا قضية تبدو مستحيلة إلى انتصار حاسم. لا يمكنني أن أوصي بهم بما يكفي.</span>
+          </p>
+          <div class="testi-hr"></div>
+          <div class="testi-author">
+            <div class="testi-avatar">ك</div>
+            <div class="testi-meta">
+              <div class="testi-name"><span class="en-inline">Khalid Al-Rasheed</span><span class="ar-inline">خالد الرشيد</span></div>
+              <div class="testi-role"><span class="en-inline">CEO, Al-Rasheed Group</span><span class="ar-inline">رئيس تنفيذي، مجموعة الرشيد</span></div>
+            </div>
+            <div class="testi-badge"><span class="en-inline">Commercial</span><span class="ar-inline">تجاري</span></div>
+          </div>
+        </div>
+
+        <!-- C2 -->
+        <div class="testi-card">
+          <div class="testi-qmark">"</div>
+          <div class="testi-stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+          <p class="testi-text">
+            <span class="en-content">When I faced serious criminal charges, the team's strategic defense was nothing short of brilliant. Their deep knowledge of Jordanian law and calm, decisive approach under pressure gave me confidence throughout.</span>
+            <span class="ar-content">حين واجهت اتهامات جنائية خطيرة، كان الدفاع الاستراتيجي للفريق لا يقل عن الرائع. معرفتهم العميقة بالقانون الأردني ونهجهم الهادئ والحاسم تحت الضغط منحاني الثقة طوال الوقت.</span>
+          </p>
+          <div class="testi-hr"></div>
+          <div class="testi-author">
+            <div class="testi-avatar">س</div>
+            <div class="testi-meta">
+              <div class="testi-name"><span class="en-inline">Samir Barakat</span><span class="ar-inline">سمير بركات</span></div>
+              <div class="testi-role"><span class="en-inline">Entrepreneur, Amman</span><span class="ar-inline">رجل أعمال، عمّان</span></div>
+            </div>
+            <div class="testi-badge"><span class="en-inline">Criminal</span><span class="ar-inline">جنائي</span></div>
+          </div>
+        </div>
+
+        <!-- C3 -->
+        <div class="testi-card">
+          <div class="testi-qmark">"</div>
+          <div class="testi-stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+          <p class="testi-text">
+            <span class="en-content">The bilingual capability is unmatched. Our international partners were impressed by how seamlessly the team navigated both Arabic and English legal frameworks. A truly world-class firm.</span>
+            <span class="ar-content">القدرة على العمل بلغتين لا مثيل لها. شركاؤنا الدوليون أُعجبوا بالسلاسة التي تنقل بها الفريق بين الأطر القانونية العربية والإنجليزية. مكتب بمعايير عالمية حقيقية.</span>
+          </p>
+          <div class="testi-hr"></div>
+          <div class="testi-author">
+            <div class="testi-avatar">L</div>
+            <div class="testi-meta">
+              <div class="testi-name"><span class="en-inline">Laura Thornton</span><span class="ar-inline">لورا ثورنتون</span></div>
+              <div class="testi-role"><span class="en-inline">Director, Global Ventures Ltd.</span><span class="ar-inline">مديرة، شركة غلوبال فنتشرز</span></div>
+            </div>
+            <div class="testi-badge"><span class="en-inline">Corporate</span><span class="ar-inline">شركات</span></div>
+          </div>
+        </div>
+
+        <!-- C4 -->
+        <div class="testi-card">
+          <div class="testi-qmark">"</div>
+          <div class="testi-stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+          <p class="testi-text">
+            <span class="en-content">Our property dispute had dragged on for years. Within months of engaging Al-Jaradat & Abu Sweilem, we reached a favorable settlement. Their strategic approach and genuine care made all the difference.</span>
+            <span class="ar-content">نزاعنا العقاري كان يتواصل لسنوات. في غضون أشهر من التعاقد مع المكتب، توصلنا إلى تسوية مواتية. نهجهم الاستراتيجي واهتمامهم الحقيقي بقضيتنا أحدث كل الفرق.</span>
+          </p>
+          <div class="testi-hr"></div>
+          <div class="testi-author">
+            <div class="testi-avatar">م</div>
+            <div class="testi-meta">
+              <div class="testi-name"><span class="en-inline">Maya Salameh</span><span class="ar-inline">مايا سلامة</span></div>
+              <div class="testi-role"><span class="en-inline">Real Estate Developer, Amman</span><span class="ar-inline">مطوّرة عقارات، عمّان</span></div>
+            </div>
+            <div class="testi-badge"><span class="en-inline">Civil</span><span class="ar-inline">مدني</span></div>
+          </div>
+        </div>
+
+        <!-- C5 -->
+        <div class="testi-card">
+          <div class="testi-qmark">"</div>
+          <div class="testi-stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+          <p class="testi-text">
+            <span class="en-content">The contract review service saved our company from a potentially devastating clause we had completely missed. Thorough, fast, and worth every dinar. This is the level of service I was looking for.</span>
+            <span class="ar-content">خدمة مراجعة العقود أنقذت شركتنا من بند كان قد يكون كارثياً وكنا قد أغفلناه تماماً. شاملة وسريعة وتستحق كل دينار. هذا هو المستوى الذي كنت أبحث عنه.</span>
+          </p>
+          <div class="testi-hr"></div>
+          <div class="testi-author">
+            <div class="testi-avatar">ي</div>
+            <div class="testi-meta">
+              <div class="testi-name"><span class="en-inline">Yousef Khatib</span><span class="ar-inline">يوسف الخطيب</span></div>
+              <div class="testi-role"><span class="en-inline">Managing Director, TechStart JO</span><span class="ar-inline">مدير عام، تك ستارت الأردن</span></div>
+            </div>
+            <div class="testi-badge"><span class="en-inline">Contracts</span><span class="ar-inline">عقود</span></div>
+          </div>
+        </div>
+
+        <!-- C6 -->
+        <div class="testi-card">
+          <div class="testi-qmark">"</div>
+          <div class="testi-stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+          <p class="testi-text">
+            <span class="en-content">Exceptional arbitration expertise. The team resolved a dispute that had been stuck for over two years — efficiently and with complete professionalism. Their reputation in Jordan is very well-deserved.</span>
+            <span class="ar-content">خبرة استثنائية في التحكيم. أنهى الفريق نزاعاً كان عالقاً لأكثر من عامين — بكفاءة واحترافية تامة. سمعتهم في الأردن تستحقها بجدارة.</span>
+          </p>
+          <div class="testi-hr"></div>
+          <div class="testi-author">
+            <div class="testi-avatar">ر</div>
+            <div class="testi-meta">
+              <div class="testi-name"><span class="en-inline">Rami Hijazi</span><span class="ar-inline">رامي حجازي</span></div>
+              <div class="testi-role"><span class="en-inline">CFO, Levant Industries</span><span class="ar-inline">المدير المالي، ليفانت إندستريز</span></div>
+            </div>
+            <div class="testi-badge"><span class="en-inline">Arbitration</span><span class="ar-inline">تحكيم</span></div>
+          </div>
+        </div>
+
+        <!-- DUPLICATE for seamless loop (C1–C6 again) -->
+        <div class="testi-card">
+          <div class="testi-qmark">"</div>
+          <div class="testi-stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+          <p class="testi-text">
+            <span class="en-content">Al-Jaradat & Abu Sweilem handled our complex commercial dispute with exceptional professionalism. They turned a seemingly impossible case into a decisive victory. I cannot recommend them highly enough.</span>
+            <span class="ar-content">تعامل مكتب الجرادات وأبو سويلم مع نزاعنا التجاري المعقد باحترافية استثنائية. حوّلوا قضية تبدو مستحيلة إلى انتصار حاسم. لا يمكنني أن أوصي بهم بما يكفي.</span>
+          </p>
+          <div class="testi-hr"></div>
+          <div class="testi-author">
+            <div class="testi-avatar">ك</div>
+            <div class="testi-meta">
+              <div class="testi-name"><span class="en-inline">Khalid Al-Rasheed</span><span class="ar-inline">خالد الرشيد</span></div>
+              <div class="testi-role"><span class="en-inline">CEO, Al-Rasheed Group</span><span class="ar-inline">رئيس تنفيذي، مجموعة الرشيد</span></div>
+            </div>
+            <div class="testi-badge"><span class="en-inline">Commercial</span><span class="ar-inline">تجاري</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-qmark">"</div>
+          <div class="testi-stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+          <p class="testi-text">
+            <span class="en-content">When I faced serious criminal charges, the team's strategic defense was nothing short of brilliant. Their deep knowledge of Jordanian law and calm, decisive approach gave me confidence throughout.</span>
+            <span class="ar-content">حين واجهت اتهامات جنائية خطيرة، كان الدفاع الاستراتيجي للفريق لا يقل عن الرائع. معرفتهم العميقة بالقانون الأردني منحاني الثقة طوال الوقت.</span>
+          </p>
+          <div class="testi-hr"></div>
+          <div class="testi-author">
+            <div class="testi-avatar">س</div>
+            <div class="testi-meta">
+              <div class="testi-name"><span class="en-inline">Samir Barakat</span><span class="ar-inline">سمير بركات</span></div>
+              <div class="testi-role"><span class="en-inline">Entrepreneur, Amman</span><span class="ar-inline">رجل أعمال، عمّان</span></div>
+            </div>
+            <div class="testi-badge"><span class="en-inline">Criminal</span><span class="ar-inline">جنائي</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-qmark">"</div>
+          <div class="testi-stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+          <p class="testi-text">
+            <span class="en-content">The bilingual capability is unmatched. Our international partners were impressed by how seamlessly the team navigated both Arabic and English legal frameworks. A truly world-class firm.</span>
+            <span class="ar-content">القدرة على العمل بلغتين لا مثيل لها. شركاؤنا الدوليون أُعجبوا بالسلاسة التي تنقل بها الفريق بين الأطر القانونية العربية والإنجليزية.</span>
+          </p>
+          <div class="testi-hr"></div>
+          <div class="testi-author">
+            <div class="testi-avatar">L</div>
+            <div class="testi-meta">
+              <div class="testi-name"><span class="en-inline">Laura Thornton</span><span class="ar-inline">لورا ثورنتون</span></div>
+              <div class="testi-role"><span class="en-inline">Director, Global Ventures Ltd.</span><span class="ar-inline">مديرة، شركة غلوبال فنتشرز</span></div>
+            </div>
+            <div class="testi-badge"><span class="en-inline">Corporate</span><span class="ar-inline">شركات</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-qmark">"</div>
+          <div class="testi-stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+          <p class="testi-text">
+            <span class="en-content">Our property dispute had dragged on for years. Within months of engaging Al-Jaradat & Abu Sweilem, we reached a favorable settlement. Their genuine care made all the difference.</span>
+            <span class="ar-content">نزاعنا العقاري كان يتواصل لسنوات. في غضون أشهر توصلنا إلى تسوية مواتية. اهتمامهم الحقيقي بقضيتنا أحدث كل الفرق.</span>
+          </p>
+          <div class="testi-hr"></div>
+          <div class="testi-author">
+            <div class="testi-avatar">م</div>
+            <div class="testi-meta">
+              <div class="testi-name"><span class="en-inline">Maya Salameh</span><span class="ar-inline">مايا سلامة</span></div>
+              <div class="testi-role"><span class="en-inline">Real Estate Developer</span><span class="ar-inline">مطوّرة عقارات</span></div>
+            </div>
+            <div class="testi-badge"><span class="en-inline">Civil</span><span class="ar-inline">مدني</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-qmark">"</div>
+          <div class="testi-stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+          <p class="testi-text">
+            <span class="en-content">The contract review saved our company from a potentially devastating clause we had completely missed. Thorough, fast, and worth every dinar.</span>
+            <span class="ar-content">خدمة مراجعة العقود أنقذت شركتنا من بند كان قد يكون كارثياً. شاملة وسريعة وتستحق كل دينار.</span>
+          </p>
+          <div class="testi-hr"></div>
+          <div class="testi-author">
+            <div class="testi-avatar">ي</div>
+            <div class="testi-meta">
+              <div class="testi-name"><span class="en-inline">Yousef Khatib</span><span class="ar-inline">يوسف الخطيب</span></div>
+              <div class="testi-role"><span class="en-inline">Managing Director, TechStart JO</span><span class="ar-inline">مدير عام، تك ستارت الأردن</span></div>
+            </div>
+            <div class="testi-badge"><span class="en-inline">Contracts</span><span class="ar-inline">عقود</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-qmark">"</div>
+          <div class="testi-stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+          <p class="testi-text">
+            <span class="en-content">Exceptional arbitration expertise. The team resolved a dispute that had been stuck for over two years — efficiently and with complete professionalism.</span>
+            <span class="ar-content">خبرة استثنائية في التحكيم. أنهى الفريق نزاعاً كان عالقاً لأكثر من عامين بكفاءة واحترافية تامة.</span>
+          </p>
+          <div class="testi-hr"></div>
+          <div class="testi-author">
+            <div class="testi-avatar">ر</div>
+            <div class="testi-meta">
+              <div class="testi-name"><span class="en-inline">Rami Hijazi</span><span class="ar-inline">رامي حجازي</span></div>
+              <div class="testi-role"><span class="en-inline">CFO, Levant Industries</span><span class="ar-inline">المدير المالي، ليفانت إندستريز</span></div>
+            </div>
+            <div class="testi-badge"><span class="en-inline">Arbitration</span><span class="ar-inline">تحكيم</span></div>
+          </div>
+        </div>
+
+      </div><!-- /testi-track row1 -->
+    </div><!-- /testi-marquee row1 -->
+
+    <!-- ══ ROW 2 — scrolls right (reverse) ══ -->
+    <div class="testi-marquee">
+      <div class="testi-track rtl-track" id="trow2">
+
+        <!-- R2-C1 -->
+        <div class="testi-card">
+          <div class="testi-qmark">"</div>
+          <div class="testi-stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+          <p class="testi-text">
+            <span class="en-content">I was referred to Al-Jaradat & Abu Sweilem by a business associate and it was the best advice I ever received. The consultation alone gave me complete clarity on a situation I had been confused about for months.</span>
+            <span class="ar-content">أحالني إلى مكتب الجرادات وأبو سويلم أحد شركائي في العمل، وكانت أفضل نصيحة تلقيتها. الاستشارة وحدها أعطتني وضوحاً تاماً حول موقف كنت في حيرة منه لأشهر.</span>
+          </p>
+          <div class="testi-hr"></div>
+          <div class="testi-author">
+            <div class="testi-avatar">ه</div>
+            <div class="testi-meta">
+              <div class="testi-name"><span class="en-inline">Hana Barghout</span><span class="ar-inline">هنا برغوث</span></div>
+              <div class="testi-role"><span class="en-inline">Architect & Business Owner</span><span class="ar-inline">مهندسة معمارية وصاحبة أعمال</span></div>
+            </div>
+            <div class="testi-badge"><span class="en-inline">Consultation</span><span class="ar-inline">استشارة</span></div>
+          </div>
+        </div>
+
+        <!-- R2-C2 -->
+        <div class="testi-card">
+          <div class="testi-qmark">"</div>
+          <div class="testi-stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+          <p class="testi-text">
+            <span class="en-content">Professional, ethical, and devastatingly effective in court. The attorney assigned to my civil case was thorough in every detail and communicated every development clearly. A true partner in the legal process.</span>
+            <span class="ar-content">محترف، نزيه، وفعّال بشكل استثنائي في المحكمة. المحامي المعين لقضيتي المدنية كان دقيقاً في كل التفاصيل وأبلغني بكل تطور بوضوح. شريك حقيقي في العملية القانونية.</span>
+          </p>
+          <div class="testi-hr"></div>
+          <div class="testi-author">
+            <div class="testi-avatar">ن</div>
+            <div class="testi-meta">
+              <div class="testi-name"><span class="en-inline">Nader Issa</span><span class="ar-inline">نادر عيسى</span></div>
+              <div class="testi-role"><span class="en-inline">Physician, Amman Medical Centre</span><span class="ar-inline">طبيب، المركز الطبي بعمّان</span></div>
+            </div>
+            <div class="testi-badge"><span class="en-inline">Civil</span><span class="ar-inline">مدني</span></div>
+          </div>
+        </div>
+
+        <!-- R2-C3 -->
+        <div class="testi-card">
+          <div class="testi-qmark">"</div>
+          <div class="testi-stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+          <p class="testi-text">
+            <span class="en-content">We incorporated three companies and negotiated two partnership agreements — all handled flawlessly. Their corporate law team is brilliant and their turnaround time is unbeatable for the quality they deliver.</span>
+            <span class="ar-content">أسسنا ثلاث شركات وتفاوضنا على اتفاقيتين للشراكة — كل ذلك جرى بسلاسة تامة. فريق القانون التجاري لديهم رائع وسرعة إنجازهم لا تضاهى مقارنةً بالجودة التي يقدمونها.</span>
+          </p>
+          <div class="testi-hr"></div>
+          <div class="testi-author">
+            <div class="testi-avatar">ف</div>
+            <div class="testi-meta">
+              <div class="testi-name"><span class="en-inline">Fares Al-Khatib</span><span class="ar-inline">فارس الخطيب</span></div>
+              <div class="testi-role"><span class="en-inline">Serial Entrepreneur, Amman</span><span class="ar-inline">مؤسس متسلسل، عمّان</span></div>
+            </div>
+            <div class="testi-badge"><span class="en-inline">Corporate</span><span class="ar-inline">شركات</span></div>
+          </div>
+        </div>
+
+        <!-- R2-C4 -->
+        <div class="testi-card">
+          <div class="testi-qmark">"</div>
+          <div class="testi-stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+          <p class="testi-text">
+            <span class="en-content">What sets this firm apart is their genuine care. They don't treat you like a case number. From day one I felt like my matter was the most important thing on their agenda. The result? A complete win.</span>
+            <span class="ar-content">ما يميز هذا المكتب هو اهتمامهم الحقيقي. لا يعاملونك كرقم قضية. منذ اليوم الأول شعرت أن قضيتي هي أهم شيء على جدول أعمالهم. النتيجة؟ فوز كامل.</span>
+          </p>
+          <div class="testi-hr"></div>
+          <div class="testi-author">
+            <div class="testi-avatar">د</div>
+            <div class="testi-meta">
+              <div class="testi-name"><span class="en-inline">Dana Mansour</span><span class="ar-inline">دانا منصور</span></div>
+              <div class="testi-role"><span class="en-inline">Marketing Executive, Amman</span><span class="ar-inline">مديرة تسويق، عمّان</span></div>
+            </div>
+            <div class="testi-badge"><span class="en-inline">Civil</span><span class="ar-inline">مدني</span></div>
+          </div>
+        </div>
+
+        <!-- R2-C5 -->
+        <div class="testi-card">
+          <div class="testi-qmark">"</div>
+          <div class="testi-stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+          <p class="testi-text">
+            <span class="en-content">The mediation expertise of this firm is extraordinary. What could have been a prolonged and costly courtroom battle was resolved in weeks through a well-structured settlement. Highly recommended for any commercial dispute.</span>
+            <span class="ar-content">خبرة المكتب في الوساطة استثنائية. ما كان يمكن أن يكون معركة قضائية مطولة ومكلفة حُسم في أسابيع من خلال تسوية منظمة. موصى به بشدة لأي نزاع تجاري.</span>
+          </p>
+          <div class="testi-hr"></div>
+          <div class="testi-author">
+            <div class="testi-avatar">T</div>
+            <div class="testi-meta">
+              <div class="testi-name"><span class="en-inline">Tariq Nasereddin</span><span class="ar-inline">طارق ناصر الدين</span></div>
+              <div class="testi-role"><span class="en-inline">Import/Export Director</span><span class="ar-inline">مدير استيراد وتصدير</span></div>
+            </div>
+            <div class="testi-badge"><span class="en-inline">Mediation</span><span class="ar-inline">وساطة</span></div>
+          </div>
+        </div>
+
+        <!-- R2-C6 -->
+        <div class="testi-card">
+          <div class="testi-qmark">"</div>
+          <div class="testi-stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+          <p class="testi-text">
+            <span class="en-content">Dealing with a criminal matter is terrifying. The team at Al-Jaradat & Abu Sweilem were not just legally brilliant — they were human. They kept me informed, calm, and ultimately free. I owe them everything.</span>
+            <span class="ar-content">التعامل مع قضية جنائية أمر مرعب. فريق مكتب الجرادات وأبو سويلم لم يكونوا فقط ممتازين قانونياً — كانوا إنسانيين. أبقوني على اطلاع، هادئاً، وفي نهاية المطاف حراً. أنا مدين لهم بكل شيء.</span>
+          </p>
+          <div class="testi-hr"></div>
+          <div class="testi-author">
+            <div class="testi-avatar">ع</div>
+            <div class="testi-meta">
+              <div class="testi-name"><span class="en-inline">Ahmad Zureikat</span><span class="ar-inline">أحمد زريقات</span></div>
+              <div class="testi-role"><span class="en-inline">Business Owner, Zarqa</span><span class="ar-inline">صاحب عمل، الزرقاء</span></div>
+            </div>
+            <div class="testi-badge"><span class="en-inline">Criminal</span><span class="ar-inline">جنائي</span></div>
+          </div>
+        </div>
+
+        <!-- DUPLICATE for seamless loop -->
+        <div class="testi-card">
+          <div class="testi-qmark">"</div>
+          <div class="testi-stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+          <p class="testi-text">
+            <span class="en-content">I was referred to Al-Jaradat & Abu Sweilem by a business associate and it was the best advice I ever received. The consultation alone gave me complete clarity on a situation I had been confused about for months.</span>
+            <span class="ar-content">أحالني إلى مكتب الجرادات وأبو سويلم أحد شركائي في العمل، وكانت أفضل نصيحة تلقيتها. الاستشارة وحدها أعطتني وضوحاً تاماً حول موقف كنت في حيرة منه لأشهر.</span>
+          </p>
+          <div class="testi-hr"></div>
+          <div class="testi-author">
+            <div class="testi-avatar">ه</div>
+            <div class="testi-meta">
+              <div class="testi-name"><span class="en-inline">Hana Barghout</span><span class="ar-inline">هنا برغوث</span></div>
+              <div class="testi-role"><span class="en-inline">Architect & Business Owner</span><span class="ar-inline">مهندسة معمارية وصاحبة أعمال</span></div>
+            </div>
+            <div class="testi-badge"><span class="en-inline">Consultation</span><span class="ar-inline">استشارة</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-qmark">"</div>
+          <div class="testi-stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+          <p class="testi-text">
+            <span class="en-content">Professional, ethical, and devastatingly effective in court. The attorney was thorough in every detail and communicated every development clearly.</span>
+            <span class="ar-content">محترف، نزيه، وفعّال بشكل استثنائي في المحكمة. المحامي كان دقيقاً في كل التفاصيل وأبلغني بكل تطور بوضوح.</span>
+          </p>
+          <div class="testi-hr"></div>
+          <div class="testi-author">
+            <div class="testi-avatar">ن</div>
+            <div class="testi-meta">
+              <div class="testi-name"><span class="en-inline">Nader Issa</span><span class="ar-inline">نادر عيسى</span></div>
+              <div class="testi-role"><span class="en-inline">Physician, Amman Medical Centre</span><span class="ar-inline">طبيب، المركز الطبي بعمّان</span></div>
+            </div>
+            <div class="testi-badge"><span class="en-inline">Civil</span><span class="ar-inline">مدني</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-qmark">"</div>
+          <div class="testi-stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+          <p class="testi-text">
+            <span class="en-content">We incorporated three companies and negotiated two partnership agreements — all handled flawlessly. Their corporate law team is brilliant.</span>
+            <span class="ar-content">أسسنا ثلاث شركات وتفاوضنا على اتفاقيتين للشراكة — كل ذلك جرى بسلاسة تامة. فريق القانون التجاري لديهم رائع.</span>
+          </p>
+          <div class="testi-hr"></div>
+          <div class="testi-author">
+            <div class="testi-avatar">ف</div>
+            <div class="testi-meta">
+              <div class="testi-name"><span class="en-inline">Fares Al-Khatib</span><span class="ar-inline">فارس الخطيب</span></div>
+              <div class="testi-role"><span class="en-inline">Serial Entrepreneur</span><span class="ar-inline">مؤسس متسلسل</span></div>
+            </div>
+            <div class="testi-badge"><span class="en-inline">Corporate</span><span class="ar-inline">شركات</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-qmark">"</div>
+          <div class="testi-stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+          <p class="testi-text">
+            <span class="en-content">What sets this firm apart is their genuine care. From day one I felt like my matter was the most important thing on their agenda. The result? A complete win.</span>
+            <span class="ar-content">ما يميز هذا المكتب هو اهتمامهم الحقيقي. منذ اليوم الأول شعرت أن قضيتي هي أهم شيء على جدول أعمالهم. النتيجة؟ فوز كامل.</span>
+          </p>
+          <div class="testi-hr"></div>
+          <div class="testi-author">
+            <div class="testi-avatar">د</div>
+            <div class="testi-meta">
+              <div class="testi-name"><span class="en-inline">Dana Mansour</span><span class="ar-inline">دانا منصور</span></div>
+              <div class="testi-role"><span class="en-inline">Marketing Executive</span><span class="ar-inline">مديرة تسويق</span></div>
+            </div>
+            <div class="testi-badge"><span class="en-inline">Civil</span><span class="ar-inline">مدني</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-qmark">"</div>
+          <div class="testi-stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+          <p class="testi-text">
+            <span class="en-content">The mediation expertise is extraordinary. What could have been a prolonged courtroom battle was resolved in weeks through a well-structured settlement.</span>
+            <span class="ar-content">خبرة المكتب في الوساطة استثنائية. ما كان يمكن أن يكون معركة قضائية مطولة حُسم في أسابيع من خلال تسوية منظمة.</span>
+          </p>
+          <div class="testi-hr"></div>
+          <div class="testi-author">
+            <div class="testi-avatar">T</div>
+            <div class="testi-meta">
+              <div class="testi-name"><span class="en-inline">Tariq Nasereddin</span><span class="ar-inline">طارق ناصر الدين</span></div>
+              <div class="testi-role"><span class="en-inline">Import/Export Director</span><span class="ar-inline">مدير استيراد وتصدير</span></div>
+            </div>
+            <div class="testi-badge"><span class="en-inline">Mediation</span><span class="ar-inline">وساطة</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-qmark">"</div>
+          <div class="testi-stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+          <p class="testi-text">
+            <span class="en-content">They kept me informed, calm, and ultimately free. I owe them everything.</span>
+            <span class="ar-content">أبقوني على اطلاع، هادئاً، وفي نهاية المطاف حراً. أنا مدين لهم بكل شيء.</span>
+          </p>
+          <div class="testi-hr"></div>
+          <div class="testi-author">
+            <div class="testi-avatar">ع</div>
+            <div class="testi-meta">
+              <div class="testi-name"><span class="en-inline">Ahmad Zureikat</span><span class="ar-inline">أحمد زريقات</span></div>
+              <div class="testi-role"><span class="en-inline">Business Owner, Zarqa</span><span class="ar-inline">صاحب عمل، الزرقاء</span></div>
+            </div>
+            <div class="testi-badge"><span class="en-inline">Criminal</span><span class="ar-inline">جنائي</span></div>
+          </div>
+        </div>
+
+      </div><!-- /testi-track row2 -->
+    </div><!-- /testi-marquee row2 -->
+
+  </div><!-- /testi-rows -->
+
+  <!-- ─── Trust bar ─── -->
+  <div class="container">
+    <div class="testi-trust reveal">
+      <div class="testi-trust-item">
+        <div class="testi-trust-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <span><span class="en-inline">100% Confidential</span><span class="ar-inline">سرية تامة مضمونة</span></span>
+      </div>
+      <div class="testi-trust-item">
+        <div class="testi-trust-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <span><span class="en-inline">3000+ Satisfied Clients</span><span class="ar-inline">أكثر من 3000 عميل راضٍ</span></span>
+      </div>
+      <div class="testi-trust-item">
+        <div class="testi-trust-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <span><span class="en-inline">5-Star Rated Service</span><span class="ar-inline">خدمة مُقيَّمة بـ 5 نجوم</span></span>
+      </div>
+      <div class="testi-trust-item">
+        <div class="testi-trust-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <span><span class="en-inline">Response Within 24hrs</span><span class="ar-inline">رد خلال 24 ساعة</span></span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- =============================================
+     FAQ
+     ============================================= -->
+<section id="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal" style="justify-content:center;">
+        <span class="en-inline">Common Questions</span>
+        <span class="ar-inline">أسئلة شائعة</span>
+      </div>
+      <h2 class="section-title reveal">FAQ</h2>
+    </div>
+
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q"><span class="en-inline">How do I schedule a consultation?</span><span class="ar-inline">كيف أحجز استشارة؟</span></span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p><span class="en-content">Use our contact form, call us directly, or reach out via WhatsApp. We offer initial consultations to understand your legal needs and discuss how we can best assist you.</span><span class="ar-content">استخدم نموذج التواصل أو اتصل بنا مباشرةً أو تواصل عبر واتساب. نقدم استشارات أولية لفهم احتياجاتك القانونية.</span></p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q"><span class="en-inline">What areas of law do you specialize in?</span><span class="ar-inline">ما مجالات القانون التي تتخصصون فيها؟</span></span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p><span class="en-content">We specialize in civil law, commercial and corporate law, arbitration and mediation, criminal defense, contract services, and legal consultation.</span><span class="ar-content">نتخصص في القانون المدني والتجاري وقانون الشركات والتحكيم والوساطة والدفاع الجنائي وخدمات العقود والاستشارات القانونية.</span></p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q"><span class="en-inline">Do you offer services in both Arabic and English?</span><span class="ar-inline">هل تقدمون خدمات بالعربية والإنجليزية؟</span></span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p><span class="en-content">Yes. We provide fully bilingual legal services in Arabic and English, ensuring clear communication and complete accuracy in both languages.</span><span class="ar-content">نعم. نقدم خدمات قانونية كاملة باللغتين العربية والإنجليزية، مما يضمن التواصل الواضح والدقة الكاملة بكلتا اللغتين.</span></p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q"><span class="en-inline">What documents should I bring to my consultation?</span><span class="ar-inline">ما الوثائق التي يجب إحضارها للاستشارة؟</span></span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p><span class="en-content">Bring all relevant documents including contracts, correspondence, court papers, valid ID, and a written timeline of events. The more information you provide, the more effective our assessment.</span><span class="ar-content">أحضر جميع الوثائق ذات الصلة بما في ذلك العقود والمراسلات وأوراق المحكمة وهوية سارية وجدول زمني للأحداث.</span></p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q"><span class="en-inline">What makes Al-Jaradat & Abu Sweilem different?</span><span class="ar-inline">ما الذي يميز مكتب الجرادات وأبو سويلم؟</span></span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p><span class="en-content">Our combination of proven expertise, strategic thinking, bilingual excellence, and genuinely personalized service sets us apart. We invest the time to understand your unique situation and craft tailored solutions.</span><span class="ar-content">يميزنا مزيجنا من الخبرة المثبتة والتفكير الاستراتيجي والتميز الثنائي اللغة والخدمة الشخصية الحقيقية. نستثمر الوقت لفهم وضعكم وصياغة حلول مخصصة.</span></p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q"><span class="en-inline">How do you communicate with clients during a case?</span><span class="ar-inline">كيف تتواصلون مع العملاء أثناء القضية؟</span></span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p><span class="en-content">We maintain regular communication through your preferred channels — phone, email, WhatsApp, or in-person. You receive timely updates and have direct access to your attorney throughout.</span><span class="ar-content">نحافظ على التواصل المنتظم عبر قنواتكم المفضلة — الهاتف أو البريد أو واتساب أو الاجتماعات الشخصية. تتلقون تحديثات في الوقت المناسب.</span></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     CONTACT
+     ============================================= -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal" style="justify-content:center;">
+        <span class="en-inline">Reach Out</span>
+        <span class="ar-inline">تواصل معنا</span>
+      </div>
+      <h2 class="section-title reveal">
+        <span class="en-content">Get In Touch</span>
+        <span class="ar-content">تواصل معنا</span>
+      </h2>
+      <p class="section-body reveal">
+        <span class="en-content">Ready to discuss your legal matter? Schedule your consultation today and take the first step toward resolution.</span>
+        <span class="ar-content">مستعد لمناقشة قضيتك القانونية؟ احجز استشارتك اليوم واتخذ الخطوة الأولى نحو الحل.</span>
+      </p>
+    </div>
+
+    <div class="contact-layout">
+      <!-- Form -->
+      <div class="contact-form-wrap reveal-from-left">
+        <h3 class="form-title"><span class="en-inline">Book a Consultation</span><span class="ar-inline">احجز استشارة</span></h3>
+        <p class="form-subtitle"><span class="en-inline">Fill in your details and we'll be in touch within 24 hours.</span><span class="ar-inline">أدخل بياناتك وسنتواصل معك خلال 24 ساعة.</span></p>
+        <div id="consult-form-wrap">
+          <div class="form-group">
+            <label class="form-label"><span class="en-inline">Full Name *</span><span class="ar-inline">الاسم الكامل *</span></label>
+            <input type="text" id="fName" class="form-control" placeholder="Your full name / اسمك الكامل">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label"><span class="en-inline">Phone Number *</span><span class="ar-inline">رقم الهاتف *</span></label>
+              <input type="tel" id="fPhone" class="form-control" placeholder="+962 07 xxxx xxxx">
+            </div>
+            <div class="form-group">
+              <label class="form-label"><span class="en-inline">Legal Matter *</span><span class="ar-inline">نوع القضية *</span></label>
+              <select id="fType" class="form-control">
+                <option value="">— Select —</option>
+                <option value="civil">Civil Law | القانون المدني</option>
+                <option value="commercial">Commercial/Corporate | التجاري والشركات</option>
+                <option value="arbitration">Arbitration | التحكيم</option>
+                <option value="criminal">Criminal Defense | الدفاع الجنائي</option>
+                <option value="contracts">Contract Services | خدمات العقود</option>
+                <option value="consultation">Legal Consultation | استشارات</option>
+                <option value="other">Other | أخرى</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label"><span class="en-inline">Brief Description *</span><span class="ar-inline">وصف مختصر للقضية *</span></label>
+            <textarea id="fDesc" class="form-control" placeholder="Please briefly describe your legal matter... / وصف مختصر للقضية"></textarea>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" id="privacy-check">
+            <span><span class="en-inline">I agree to the privacy policy and terms of service.</span><span class="ar-inline">أوافق على سياسة الخصوصية وشروط الخدمة.</span></span>
+          </div>
+          <div class="form-privacy">
+            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+            <span><span class="en-inline">Your information is confidential and protected under attorney-client privilege.</span><span class="ar-inline">معلوماتكم سرية ومحمية بموجب الامتياز القانوني للمحامي والموكل.</span></span>
+          </div>
+          <button type="button" id="waFormBtn" class="form-submit" onclick="sendConsultWA()">
+            <span class="en-inline">Book Consultation Now</span>
+            <span class="ar-inline">احجز استشارة الآن</span>
+          </button>
+          <div class="form-success" id="form-success" style="display:none;">
+            ✓ <span class="en-inline">Thank you! Opening WhatsApp now...</span><span class="ar-inline">شكراً! جارٍ فتح واتساب...</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div class="contact-info-side reveal-from-right">
+        <div class="section-label">
+          <span class="en-inline">Contact Information</span>
+          <span class="ar-inline">معلومات التواصل</span>
+        </div>
+        <h3 class="contact-heading">
+          <span class="en-content">Let's Talk<br>About Your Case</span>
+          <span class="ar-content">دعنا نتحدث<br>عن قضيتك</span>
+        </h3>
+        <p class="contact-desc">
+          <span class="en-content">Our team is ready to provide the legal expertise you need. Reach out today — your first consultation sets the strategy.</span>
+          <span class="ar-content">فريقنا جاهز لتقديم الخبرة القانونية التي تحتاجها. تواصل اليوم — استشارتك الأولى تضع الاستراتيجية.</span>
+        </p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label"><span class="en-inline">Office Address</span><span class="ar-inline">عنوان المكتب</span></div>
+              <div class="contact-item-value"><span class="en-inline">Amman, Jordan</span><span class="ar-inline">عمّان، الأردن</span></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 14a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 3.12h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.7a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 18z"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label"><span class="en-inline">Phone</span><span class="ar-inline">الهاتف</span></div>
+              <div class="contact-item-value"><a href="tel:+962" style="color:inherit;">+962 07 8273 5763</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label"><span class="en-inline">Email</span><span class="ar-inline">البريد الإلكتروني</span></div>
+              <div class="contact-item-value"><a href="mailto:Alaa.mefleh2@icloud.com">Alaa.mefleh2@icloud.com</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label">WhatsApp</div>
+              <div class="contact-item-value">+962 07 8273 5763</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hours-block">
+          <div class="hours-title"><span class="en-inline">Business Hours</span><span class="ar-inline">ساعات العمل</span></div>
+          <div class="hours-row">
+            <span><span class="en-inline">Sunday – Thursday</span><span class="ar-inline">الأحد – الخميس</span></span>
+            <strong>9:00 AM – 5:00 PM</strong>
+          </div>
+          <div class="hours-row">
+            <span><span class="en-inline">Saturday</span><span class="ar-inline">السبت</span></span>
+            <strong>10:00 AM – 2:00 PM</strong>
+          </div>
+          <div class="hours-row">
+            <span><span class="en-inline">Friday</span><span class="ar-inline">الجمعة</span></span>
+            <strong style="opacity:0.4"><span class="en-inline">Closed</span><span class="ar-inline">مغلق</span></strong>
+          </div>
+        </div>
+
+        <a href="https://wa.me/9620782735763" class="wa-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <span class="en-inline">Chat on WhatsApp</span>
+          <span class="ar-inline">تواصل عبر واتساب</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     FOOTER
+     ============================================= -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-name"><span class="en-inline">Al-Jaradat & Abu Sweilem</span><span class="ar-inline">الجرادات وأبو سويلم</span></div>
+        <div class="footer-brand-sub"><span class="en-inline">Attorneys & Legal Consultants</span><span class="ar-inline">محامون ومستشارون</span></div>
+        <p class="footer-tagline"><span class="en-content">Distinguished legal excellence with strategic vision. Trusted representation since our founding.</span><span class="ar-content">تميز قانوني راقٍ برؤية استراتيجية. تمثيل موثوق منذ تأسيسنا.</span></p>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://www.instagram.com/lawyer_alaa_mofleh?igsh=bm1yZHNzY3NjbnRw" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://www.facebook.com/share/1H66KSUjMx/" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://wa.me/9620782735763" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title"><span class="en-inline">Quick Links</span><span class="ar-inline">روابط سريعة</span></div>
+        <ul class="footer-links">
+          <li><a href="#hero"><span class="en-inline">Home</span><span class="ar-inline">الرئيسية</span></a></li>
+          <li><a href="#about"><span class="en-inline">About Us</span><span class="ar-inline">من نحن</span></a></li>
+          <li><a href="#practice-areas"><span class="en-inline">Practice Areas</span><span class="ar-inline">الاختصاصات</span></a></li>
+          <li><a href="#why-us"><span class="en-inline">Why Us</span><span class="ar-inline">لماذا نحن</span></a></li>
+          <li><a href="#testimonials"><span class="en-inline">Reviews</span><span class="ar-inline">الآراء</span></a></li><li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact"><span class="en-inline">Contact</span><span class="ar-inline">تواصل</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title"><span class="en-inline">Services</span><span class="ar-inline">الخدمات</span></div>
+        <ul class="footer-links">
+          <li><a href="#practice-areas"><span class="en-inline">Civil Law</span><span class="ar-inline">القانون المدني</span></a></li>
+          <li><a href="#practice-areas"><span class="en-inline">Commercial Law</span><span class="ar-inline">القانون التجاري</span></a></li>
+          <li><a href="#practice-areas"><span class="en-inline">Arbitration</span><span class="ar-inline">التحكيم</span></a></li>
+          <li><a href="#practice-areas"><span class="en-inline">Criminal Defense</span><span class="ar-inline">الدفاع الجنائي</span></a></li>
+          <li><a href="#practice-areas"><span class="en-inline">Contracts</span><span class="ar-inline">العقود</span></a></li>
+          <li><a href="#practice-areas"><span class="en-inline">Consultation</span><span class="ar-inline">الاستشارات</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title"><span class="en-inline">Contact Us</span><span class="ar-inline">اتصل بنا</span></div>
+        <div class="footer-contact-row">
+          <div class="footer-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="footer-contact-text"><span class="en-inline">Amman, Jordan</span><span class="ar-inline">عمّان، الأردن</span></div>
+        </div>
+        <div class="footer-contact-row">
+          <div class="footer-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 14a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 3.12h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.7a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 18z"/></svg></div>
+          <div class="footer-contact-text">+962 07 8273 5763</div>
+        </div>
+        <div class="footer-contact-row">
+          <div class="footer-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div class="footer-contact-text"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6900070f062903081b080d081d44080b1c1a1e0c00050c04470a0604">[email&#160;protected]</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Al-Jaradat & Abu Sweilem. <span class="en-inline">All Rights Reserved.</span><span class="ar-inline">جميع الحقوق محفوظة.</span></p>
+      <div class="footer-legal">
+        <a href="#"><span class="en-inline">Privacy Policy</span><span class="ar-inline">الخصوصية</span></a>
+        <a href="#"><span class="en-inline">Terms</span><span class="ar-inline">الشروط</span></a>
+        <a href="#"><span class="en-inline">Disclaimer</span><span class="ar-inline">إخلاء المسؤولية</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-disclaimer container">
+    <span class="en-content">This website is an advertisement for legal services. The information provided does not constitute legal advice and does not establish an attorney-client relationship. Prior results do not guarantee similar outcomes.</span>
+    <span class="ar-content">هذا الموقع إعلان عن خدمات قانونية. المعلومات المقدمة لا تُشكل مشورة قانونية ولا تنشئ علاقة محامٍ وموكل. النتائج السابقة لا تضمن نتائج مماثلة.</span>
+  </div>
+</footer>
+
+<!-- =============================================
+     JAVASCRIPT
+     ============================================= -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ---- Custom Cursor ----
+const cursor = document.getElementById('cursor');
+const cursorRing = document.getElementById('cursor-ring');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cursor.style.left = mx + 'px';
+  cursor.style.top = my + 'px';
+});
+function animateCursorRing() {
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) * 0.12;
+  cursorRing.style.left = rx + 'px';
+  cursorRing.style.top = ry + 'px';
+  requestAnimationFrame(animateCursorRing);
+}
+animateCursorRing();
+
+// ---- Particles ----
+const canvas = document.getElementById('particles-canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+function createParticle() {
+  return {
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    size: Math.random() * 1.5 + 0.3,
+    speedX: (Math.random() - 0.5) * 0.3,
+    speedY: -Math.random() * 0.4 - 0.1,
+    opacity: Math.random() * 0.5 + 0.1,
+    life: 0,
+    maxLife: Math.random() * 300 + 150,
+  };
+}
+for (let i = 0; i < 80; i++) particles.push(createParticle());
+
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach((p, i) => {
+    p.x += p.speedX;
+    p.y += p.speedY;
+    p.life++;
+    const lifeRatio = p.life / p.maxLife;
+    const fade = lifeRatio < 0.2 ? lifeRatio / 0.2 : lifeRatio > 0.8 ? (1 - lifeRatio) / 0.2 : 1;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(201,168,76,${p.opacity * fade})`;
+    ctx.fill();
+    if (p.life >= p.maxLife) particles[i] = createParticle();
+  });
+  requestAnimationFrame(animateParticles);
+}
+animateParticles();
+
+// ---- Language Toggle ----
+function setLang(lang) {
+  const html = document.documentElement;
+  html.setAttribute('lang', lang);
+  html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+  ['btn-en','btn-ar','btn-en-m','btn-ar-m'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle('active', el.id.includes(lang));
+  });
+  try { localStorage.setItem('preferred-lang', lang); } catch(e) {}
+}
+(function() {
+  try { const s = localStorage.getItem('preferred-lang'); if (s === 'ar') setLang('ar'); } catch(e) {}
+})();
+
+// ---- Navbar ----
+const navbar = document.getElementById('navbar');
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  const scroll = window.scrollY;
+  navbar.classList.toggle('scrolled', scroll > 50);
+  lastScroll = scroll;
+  updateActiveNav();
+});
+function updateActiveNav() {
+  const scrollY = window.scrollY + 100;
+  let current = '';
+  document.querySelectorAll('section[id]').forEach(s => {
+    if (s.offsetTop <= scrollY) current = s.id;
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+}
+
+// ---- Mobile Menu ----
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('mobile-menu').classList.add('open');
+});
+document.getElementById('mobile-close').addEventListener('click', () => {
+  document.getElementById('mobile-menu').classList.remove('open');
+});
+function closeMobile() { document.getElementById('mobile-menu').classList.remove('open'); }
+
+// ---- FAQ ----
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const open = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!open) item.classList.add('open');
+}
+
+// ---- Scroll Reveal ----
+document.addEventListener('DOMContentLoaded', () => {
+  document.documentElement.classList.add('js-ready');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('up');
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.reveal, .reveal-from-left, .reveal-from-right').forEach(el => observer.observe(el));
+});
+
+// ---- WhatsApp Form Send ----
+function sendConsultWA() {
+  var name  = document.getElementById('fName').value.trim();
+  var phone = document.getElementById('fPhone').value.trim();
+  var type  = document.getElementById('fType').value;
+  var desc  = document.getElementById('fDesc').value.trim();
+  var agree = document.getElementById('privacy-check').checked;
+
+  // Clear errors
+  ['fName','fPhone','fType','fDesc'].forEach(function(id){
+    document.getElementById(id).style.borderColor='';
+  });
+
+  var ok = true;
+  if(!name)  { document.getElementById('fName').style.borderColor='#c9a84c'; ok=false; }
+  if(!phone||phone.replace(/\D/g,'').length<7) { document.getElementById('fPhone').style.borderColor='#c9a84c'; ok=false; }
+  if(!type)  { document.getElementById('fType').style.borderColor='#c9a84c'; ok=false; }
+  if(!desc)  { document.getElementById('fDesc').style.borderColor='#c9a84c'; ok=false; }
+  if(!agree) { alert('Please agree to the privacy policy.\n\nيرجى الموافقة على سياسة الخصوصية.'); ok=false; }
+  if(!ok) return;
+
+  var labels = {
+    'civil':'Civil Law - القانون المدني',
+    'commercial':'Commercial/Corporate - التجاري والشركات',
+    'arbitration':'Arbitration - التحكيم',
+    'criminal':'Criminal Defense - الدفاع الجنائي',
+    'contracts':'Contract Services - خدمات العقود',
+    'consultation':'Legal Consultation - استشارات',
+    'other':'Other - أخرى'
+  };
+  var typeText = labels[type] || type;
+  var isAr = document.documentElement.lang === 'ar';
+
+  var line = '\u2015\u2015\u2015\u2015\u2015\u2015\u2015\u2015\u2015\u2015\u2015\u2015';
+  var msg = '\u2696\ufe0f *' + (isAr ? '\u0637\u0644\u0628 \u0627\u0633\u062a\u0634\u0627\u0631\u0629 - \u0645\u0643\u062a\u0628 \u0627\u0644\u062c\u0631\u0627\u062f\u0627\u062a \u0648\u0623\u0628\u0648 \u0633\u0648\u064a\u0644\u0645' : 'Consultation Request - Al-Jaradat & Abu Sweilem') + '*\n' + line + '\n'
+    + '\ud83d\udc64 *' + (isAr?'\u0627\u0644\u0627\u0633\u0645':'Name') + ':* ' + name + '\n'
+    + '\ud83d\udcde *' + (isAr?'\u0627\u0644\u0647\u0627\u062a\u0641':'Phone') + ':* ' + phone + '\n'
+    + '\u2696\ufe0f *' + (isAr?'\u0646\u0648\u0639 \u0627\u0644\u0642\u0636\u064a\u0629':'Legal Matter') + ':* ' + typeText + '\n'
+    + line + '\n'
+    + '\ud83d\udcdd *' + (isAr?'\u062a\u0641\u0627\u0635\u064a\u0644 \u0627\u0644\u0645\u0633\u0623\u0644\u0629':'Case Details') + ':*\n' + desc + '\n' + line;
+
+  var btn = document.getElementById('waFormBtn');
+  btn.disabled = true;
+  btn.innerHTML = (isAr ? '\u062c\u0627\u0631\u0650 \u0627\u0644\u0641\u062a\u062d...' : 'Opening WhatsApp...');
+
+  setTimeout(function(){
+    window.open('https://wa.me/9620782735763?text='+encodeURIComponent(msg),'_blank');
+    var s = document.getElementById('form-success');
+    if(s){ s.style.display='block'; }
+    document.getElementById('fName').value='';
+    document.getElementById('fPhone').value='';
+    document.getElementById('fType').value='';
+    document.getElementById('fDesc').value='';
+    document.getElementById('privacy-check').checked=false;
+    btn.disabled=false;
+    btn.innerHTML = isAr
+      ? '<span class="ar-inline">\u0627\u062d\u062c\u0632 \u0627\u0633\u062a\u0634\u0627\u0631\u0629 \u0627\u0644\u0622\u0646</span>'
+      : '<span class="en-inline">Book Consultation Now</span>';
+    setTimeout(function(){ if(s){ s.style.display='none'; } },6000);
+  },700);
+}
+
+// ---- Smooth Scroll ----
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+
+// ---- Counter Animation ----
+function animateCount(el, target) {
+  let start = 0;
+  const duration = 2000;
+  const step = timestamp => {
+    if (!step.startTime) step.startTime = timestamp;
+    const progress = Math.min((timestamp - step.startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const suffix = target.includes('+') ? '+' : target.includes('%') ? '%' : '';
+    const num = Math.floor(eased * parseInt(target));
+    el.textContent = num + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+const counterObserver = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){
+      var el=entry.target;
+      var val=el.getAttribute('data-count');
+      if(val&&!el.dataset.counted){
+        el.dataset.counted='1';
+        var start=0, end=parseInt(val), dur=1800;
+        var step=Math.ceil(end/60);
+        var timer=setInterval(function(){
+          start+=step;
+          if(start>=end){start=end;clearInterval(timer);}
+          el.textContent=start+'+';
+        },dur/60);
+      }
+      counterObserver.unobserve(el);
+    }
+  });
+},{threshold:0.5});
+document.querySelectorAll('.stat-num,.hero-stat-num').forEach(function(el){
+  el.setAttribute('data-count',parseInt(el.textContent)||0);
+  counterObserver.observe(el);
+});
+</script>
+</body>
+</html>
